@@ -1,5 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { LandingPage, QuizzPage } from "../pages";
+import QuizzBanner from "../components/quizz/QuizzBanner";
 
 const router = createBrowserRouter([
   {
@@ -9,6 +10,10 @@ const router = createBrowserRouter([
   {
     path: "/quizz",
     element: <QuizzPage />,
+  },
+  {
+    path: "/quizz-banner",
+    element: <QuizzBanner />,
   },
 ]);
 
