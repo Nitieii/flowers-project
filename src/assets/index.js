@@ -1,3 +1,4 @@
 import close from './close.svg';
+import question from './question';
 
-export { close };
+export { close, question};
