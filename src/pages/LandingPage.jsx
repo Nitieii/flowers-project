@@ -39,16 +39,32 @@ const LandingPage = () => {
 
   return (
     <div className="relative">
-      <video
-        src={videoBg}
-        autoPlay
-        loop
-        muted={isMute}
-        className="-z-10 w-screen object-cover"
-      />
+      <div className="relative">
+        <video
+          src={videoBg}
+          autoPlay
+          loop
+          muted={isMute}
+          className="-z-10 w-screen object-cover"
+        />
+
+        <div className="absolute top-0 z-10 h-full w-full bg-black bg-opacity-0 text-white opacity-0 duration-300 hover:bg-opacity-20 hover:opacity-100">
+          <div className="absolute bottom-[14%] left-[16%] w-[546px]">
+            <h1 className="mb-4 text-[40px] font-semibold">
+              The Art of Flower
+            </h1>
+
+            <p>
+              rure eiusmod sit cillum laborum occaecat ex fugiat elit non fugiat
+              i irure eu veniam id qui. Velit amet ut ipsum irure incididunt.
+              Velit Lorem do irure ut eu voluptate irure Lorem commodo fugiat.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div className="mt-14">
-        <h2 className="font-medium text-[32px] text-center">STORIES</h2>
+        <h2 className="text-center text-[32px] font-medium">STORIES</h2>
 
         <div className="">
           <Swiper
@@ -74,14 +90,14 @@ const LandingPage = () => {
           >
             {slideImages.map((image) => (
               <SwiperSlide key={image}>
-                <div className="flex flex-col gap-6 items-center duration-300">
+                <div className="flex flex-col items-center gap-6 duration-300">
                   <img
                     src={image}
                     alt="slide_image"
-                    className="w-[800px] h-[400px] object-cover rounded-lg blur-sm"
+                    className="h-[400px] w-[800px] rounded-lg object-cover blur-sm"
                   />
 
-                  <h3 className="font-medium text-[32px] opacity-0">
+                  <h3 className="text-[32px] font-medium opacity-0">
                     THE ART OF FLOWERS
                   </h3>
 
@@ -91,7 +107,7 @@ const LandingPage = () => {
                     incididunt. Velit Lorem do irure ut eu voluptate irure Lorem
                     commodo fugiat.
                   </p>
-                  <button className="btn min-h-[39px] h-[39px] w-[120px] bg-[#546641] hover:bg-[#546641c9] text-white font-medium opacity-0">
+                  <button className="btn h-[39px] min-h-[39px] w-[120px] bg-[#546641] font-medium text-white opacity-0 hover:bg-[#546641c9]">
                     Xem thêm
                   </button>
                 </div>
@@ -111,9 +127,9 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="absolute top-10 z-10 right-0">
+      <div className="absolute right-0 top-10 z-10">
         <button
-          className="btn relative text-xl border-none bg-black bg-opacity-40 text-white hover:bg-opacity-60 hover:bg-black rounded-none"
+          className="btn relative rounded-none border-none bg-black bg-opacity-40 text-xl text-white hover:bg-black hover:bg-opacity-60"
           onClick={() => setIsMute(!isMute)}
         >
           {isMute ? <VscMute /> : <VscUnmute />}

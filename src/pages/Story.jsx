@@ -1,69 +1,174 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { VscUnmute, VscMute } from "react-icons/vsc";
 
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import StoryBg1 from "../assets/video/story1.mp4";
+import StoryBg2 from "../assets/video/story2.mp4";
+import StoryBg3 from "../assets/video/story3.mp4";
+import StoryBg4 from "../assets/video/story4.mp4";
 
-import slice_image_1 from "../assets/SliderImgs/flower1.jpg";
-import slice_image_2 from "../assets/SliderImgs/flower2.jpg";
-import slice_image_3 from "../assets/SliderImgs/flower3.jpg";
-import slice_image_4 from "../assets/SliderImgs/flower4.jpg";
-import slice_image_5 from "../assets/SliderImgs/flower5.jpg";
+import ScrollNextIcon from "../assets/StoryPageIcons/chevron-down.svg";
 
 function Story() {
+  const [isMute, setIsMute] = useState(true);
+  const navigate = useNavigate();
+
   return (
-    <div>
-      <Swiper
-        effect={"coverflow"}
-        grabCursor={false}
-        centeredSlides={true}
-        loop={true}
-        slicesPerView={'auto'}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 50,
-        }}
-        pagination={{ el: ".swiper-pagination", clickable: false }}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-          clickable: false,
-        }}
-        modules={[EffectCoverflow, Pagination, Navigation]}
-        className="swiper_container"
-      >
-        <SwiperSlide>
-          <img src={slice_image_1} alt="slice_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={slice_image_2} alt="slice_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={slice_image_3} alt="slice_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={slice_image_4} alt="slice_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={slice_image_5} alt="slice_image" />
-        </SwiperSlide>
+    <div
+      className="scrollbar-hide-y h-screen w-full snap-y snap-mandatory overflow-y-scroll scroll-smooth  duration-300"
+      id="scroll-container"
+    >
+      <div className="relative h-screen w-full snap-start">
+        <video
+          src={StoryBg1}
+          autoPlay
+          loop
+          muted={isMute}
+          className="-z-10 h-screen w-screen object-cover"
+        />
 
-        <div className="slider-controller">
-          <div className="swiper-button-prev slider-arrow">
-            <span>left</span>
+        <div className="absolute top-0 h-full w-full bg-black bg-opacity-20">
+          <div className="absolute left-[10%] top-[50%] w-[546px] text-white">
+            <div className="h-[300px] border-b ">
+              <h1 className="mb-4 text-[40px] font-semibold">
+                Story 1 - The introduction
+              </h1>
+
+              <p className="text-lg ">
+                Rure eiusmod sit cillum laborum occaecat ex fugiat elit non
+                fugiat i irure eu veniam id qui. Velit amet ut ipsum irure
+                incididunt. Velit Lorem do irure ut eu voluptate irure L.
+              </p>
+            </div>
+
+            <div className="mt-2 flex items-center">
+              <div className="relative h-10 w-10">
+                <img className="absolute -top-1" src={ScrollNextIcon} />
+                <img className="absolute top-1" src={ScrollNextIcon} />
+              </div>
+              Scroll down to continue
+            </div>
           </div>
-
-          <div className="swiper-button-next slider-arrow">
-            <span>right</span>
-          </div>
-
-          <div className="swiper-pagination"></div>
         </div>
-      </Swiper>
+      </div>
+
+      <div className="relative h-screen w-full snap-start">
+        <video
+          src={StoryBg2}
+          autoPlay
+          loop
+          muted={isMute}
+          className="-z-10 h-screen w-screen object-cover"
+        />
+
+        <div className="absolute top-0 h-full w-full bg-black bg-opacity-20">
+          <div className="absolute left-[10%] top-[50%] w-[546px] text-white">
+            <div className="h-[300px] border-b ">
+              <h1 className="mb-4 text-[40px] font-semibold">
+                Story 2 - The introduction
+              </h1>
+
+              <p className="text-lg ">
+                Rure eiusmod sit cillum laborum occaecat ex fugiat elit non
+                fugiat i irure eu veniam id qui. Velit amet ut ipsum irure
+                incididunt. Velit Lorem do irure ut eu voluptate irure L.
+              </p>
+
+              <button
+                className="btn mt-10 border-none bg-[#546641] text-white hover:bg-[#62774c]"
+                onClick={() => navigate("/quiz")}
+              >
+                Take Quiz
+              </button>
+            </div>
+
+            <div className="mt-2 flex items-center">
+              <div className="relative h-10 w-10">
+                <img className="absolute -top-1" src={ScrollNextIcon} />
+                <img className="absolute top-1" src={ScrollNextIcon} />
+              </div>
+              Scroll down to continue
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative h-screen w-full snap-start">
+        <video
+          src={StoryBg3}
+          autoPlay
+          loop
+          muted={isMute}
+          className="-z-10 h-screen w-screen object-cover"
+        />
+
+        <div className="absolute top-0 h-full w-full bg-black bg-opacity-20">
+          <div className="absolute left-[10%] top-[50%] w-[546px] text-white">
+            <div className="h-[300px] border-b ">
+              <h1 className="mb-4 text-[40px] font-semibold">
+                Story 1 - The introduction
+              </h1>
+
+              <p className="text-lg ">
+                Rure eiusmod sit cillum laborum occaecat ex fugiat elit non
+                fugiat i irure eu veniam id qui. Velit amet ut ipsum irure
+                incididunt. Velit Lorem do irure ut eu voluptate irure L.
+              </p>
+            </div>
+
+            <div className="mt-2 flex items-center">
+              <div className="relative h-10 w-10">
+                <img className="absolute -top-1" src={ScrollNextIcon} />
+                <img className="absolute top-1" src={ScrollNextIcon} />
+              </div>
+              Scroll down to continue
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative h-screen w-full snap-start">
+        <video
+          src={StoryBg4}
+          autoPlay
+          loop
+          muted={isMute}
+          className="-z-10 h-screen w-screen object-cover"
+        />
+
+        <div className="absolute top-0 h-full w-full bg-black bg-opacity-20">
+          <div className="absolute left-[10%] top-[50%] w-[546px] text-white">
+            <div className="h-[300px] border-b ">
+              <h1 className="mb-4 text-[40px] font-semibold">
+                Story 1 - The introduction
+              </h1>
+
+              <p className="text-lg ">
+                Rure eiusmod sit cillum laborum occaecat ex fugiat elit non
+                fugiat i irure eu veniam id qui. Velit amet ut ipsum irure
+                incididunt. Velit Lorem do irure ut eu voluptate irure L.
+              </p>
+            </div>
+
+            <div className="mt-2 flex items-center">
+              <div className="relative h-10 w-10">
+                <img className="absolute -top-1" src={ScrollNextIcon} />
+                <img className="absolute top-1" src={ScrollNextIcon} />
+              </div>
+              Scroll down to continue
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute right-0 top-10 z-10">
+        <button
+          className="btn relative rounded-none border-none bg-black bg-opacity-40 text-xl text-white hover:bg-black hover:bg-opacity-60"
+          onClick={() => setIsMute(!isMute)}
+        >
+          {isMute ? <VscMute /> : <VscUnmute />}
+        </button>
+      </div>
     </div>
   );
 }

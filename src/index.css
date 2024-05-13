@@ -32,6 +32,15 @@ body::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
+.scrollbar-hide-y::-webkit-scrollbar {
+  width: 0px; /* For vertical scrollbar */
+}
+
+.scrollbar-hide-y {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
 @layer components {
   .max-container {
     max-width: 1440px;

@@ -4,6 +4,7 @@ import AppLayout from "../ui/AppLayout";
 import QuizStart from "../pages/QuizStart";
 import Story from "../pages/Story";
 import QuizzBanner from "../components/quizz/QuizzBanner";
+import Test from "../pages/Test";
 
 const router = createBrowserRouter([
   {
@@ -19,10 +20,6 @@ const router = createBrowserRouter([
         path: "/quizStart",
         element: <QuizStart />,
       },
-      {
-        path: "/story",
-        element: <Story />,
-      },
     ],
   },
   {
@@ -30,12 +27,12 @@ const router = createBrowserRouter([
     element: <QuizPage />,
   },
   {
-    path: "/quizz-banner",
-    element: <QuizzBanner />,
+    path: "/story",
+    element: <Story />,
   },
   {
-    path: "/quizz-banner",
-    element: <QuizzBanner />,
+    path: "/test",
+    element: <Test />,
   },
 ]);
 
