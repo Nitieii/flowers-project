@@ -1,15 +1,37 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { LandingPage, QuizzPage } from "../pages";
+import { LandingPage, QuizPage } from "../pages";
+import AppLayout from "../ui/AppLayout";
+import QuizStart from "../pages/QuizStart";
+import Story from "../pages/Story";
 import QuizzBanner from "../components/quizz/QuizzBanner";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage />,
+    element: <AppLayout />,
+    children: [
+      {
+        index: true,
+        path: "/",
+        element: <LandingPage />,
+      },
+      {
+        path: "/quizStart",
+        element: <QuizStart />,
+      },
+      {
+        path: "/story",
+        element: <Story />,
+      },
+    ],
   },
   {
-    path: "/quizz",
-    element: <QuizzPage />,
+    path: "/quiz",
+    element: <QuizPage />,
+  },
+  {
+    path: "/quizz-banner",
+    element: <QuizzBanner />,
   },
   {
     path: "/quizz-banner",

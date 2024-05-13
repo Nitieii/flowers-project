@@ -14,5 +14,3 @@ const QuizzAnswer = ({ option, selected, onClick }) => {
     </div>
   );
 };
-
-export default QuizzAnswer

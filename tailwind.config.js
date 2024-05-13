@@ -13,6 +13,16 @@ export default {
       "4xl": ["48px", "58px"],
       "8xl": ["96px", "106px"],
     },
+    container: {
+      screens: {
+        sm: "375px",
+        md: "576px",
+        lg: "768px",
+        xl: "1024px",
+        "2xl": "1280px",
+        "3xl": "1536px",
+      },
+    },
 
     extend: {
       fontFamily: {
@@ -24,7 +34,6 @@ export default {
         secondary: "#EDE8E3",
         "coral-red": "#FF6452",
         "slate-gray": "#6D6D6D",
-  
       },
       boxShadow: {
         "3xl": "0 10px 40px rgba(0, 0, 0, 0.1)",
@@ -39,5 +48,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };

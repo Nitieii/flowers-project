@@ -1,2 +1,2 @@
 export {default as LandingPage} from './LandingPage';
-export {default as QuizzPage} from './QuizzPage';
+export {default as QuizPage} from './QuizPage';
