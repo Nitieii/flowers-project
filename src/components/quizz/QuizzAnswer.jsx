@@ -1,9 +1,10 @@
-
 const QuizzAnswer = ({ option, selected, onClick }) => {
+
+  console.log(selected)
   return (
     <div
-      className={`flex flex-row items-center bg-white w-[500px] rounded-lg mb-[30px] py-[16px] px-[24px] gap-[30px]  transition-colors duration-700 ${
-        selected ? "bg-[#9EAA92]" : ""
+      className={`flex flex-row items-center w-[500px] rounded-lg mb-[30px] py-[16px] px-[24px] gap-[30px]   ${
+        selected ? "bg-[#9EAA92]" : "bg-white"
       }`}
       onClick={onClick}
     >
@@ -14,3 +15,5 @@ const QuizzAnswer = ({ option, selected, onClick }) => {
     </div>
   );
 };
+
+export default QuizzAnswer;
