@@ -1,6 +1,5 @@
 const QuizzAnswer = ({ option, selected, onClick }) => {
 
-  console.log(selected)
   return (
     <div
       className={`flex flex-row items-center w-[500px] rounded-lg mb-[30px] py-[16px] px-[24px] gap-[30px]   ${
