@@ -1,12 +1,14 @@
 import { close, question } from "../assets";
 import QuizzAnswer from "../components/quizz/QuizzAnswer";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const QuizzPage = () => {
   const [index, setIndex] = useState(0);
   const [questions, setQuestions] = useState(question[index]);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isSelected, setIsSelected] = useState(false);
+  const navigate = useNavigate();
 
   const handleAnswerClick = (optionId) => {
     setSelectedAnswer(optionId);
@@ -25,6 +27,12 @@ const QuizzPage = () => {
     setIsSelected(false);
   };
 
+  const handleClose = () => {
+    navigate("/quizStart");
+    setIndex(0);
+    setIsSelected(false);
+  }
+
   const progress = ((index + 1) / question.length) * 100;
   console.log(progress);
 
@@ -35,7 +43,14 @@ const QuizzPage = () => {
           <h3 className="font-semibold mx-auto text-2xl font-poppins ">
             Flowers Quiz #{index + 1}
           </h3>
-          <img className="" src={close} alt="close" width={50} height={50} />
+          <img
+            className="cursor-pointer"
+            src={close}
+            alt="close"
+            width={50}
+            height={50}
+            onClick={handleClose}
+          />
         </div>
 
         <h2
@@ -68,7 +83,7 @@ const QuizzPage = () => {
               style={{ width: `${progress}%` }}
             ></div>
           </div>
-          <p className="mr-[209px] max-sm:mr-[90px]">
+          <p className="mr-[209px] text-[#757575] font-[900] max-sm:mr-[90px]">
             {index + 1}/{question.length}
           </p>
 

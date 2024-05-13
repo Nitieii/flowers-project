@@ -8,10 +8,20 @@ const QuizzAnswer = ({ option, selected, onClick }) => {
       }`}
       onClick={onClick}
     >
-      <p className="text-center py-[8px] px-[16px] bg-secondary rounded-full font-semibold text-[20px]">
+      <p
+        className={`text-center py-[8px] px-[16px]  rounded-full font-semibold text-[20px] transition-colors duration-700 ${
+          selected ? "text-[#546641] bg-[#fff]" : "text-[#000] bg-secondary"
+        }`}
+      >
         {option.id}
       </p>
-      <p className="font-semibold text-[20px]">{option.value}</p>
+      <p
+        className={`font-semibold text-[20px] transition-colors duration-700 ${
+          selected ? "text-[#fff]" : "text-[#000]"
+        }`}
+      >
+        {option.value}
+      </p>
     </div>
   );
 };
