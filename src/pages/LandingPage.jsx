@@ -57,7 +57,7 @@ const LandingPage = () => {
     <div className="relative">
       <div className="relative">
         {!videoLoaded && (
-          <div className="absolute top-0 left-0 z-10 flex h-full w-full items-center justify-center bg-black">
+          <div className="absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-black">
             <p className="text-white">Loading...</p>
           </div>
         )}
@@ -69,7 +69,7 @@ const LandingPage = () => {
           loop
           muted={isMute}
           loading="lazy"
-          className={`-z-10 w-screen object-cover ${videoLoaded ? '' : 'hidden'}`}
+          className={`-z-10 w-screen object-cover ${videoLoaded ? "" : "hidden"}`}
         />
 
         <div className="absolute top-0 z-10 h-full w-full bg-black bg-opacity-0 text-white opacity-0 duration-300 hover:bg-opacity-20 hover:opacity-100">

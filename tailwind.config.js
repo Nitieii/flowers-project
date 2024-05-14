@@ -57,5 +57,6 @@ export default {
   plugins: [require("daisyui")],
   daisyui: {
     themes: ["light"],
+    logs: false,
   },
 };

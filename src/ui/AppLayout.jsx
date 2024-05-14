@@ -1,5 +1,6 @@
 import { ScrollProvider } from "../context/ScrollContext";
 import Header from "../layout/header/Header";
+import Footer from "../layout/footer/Footer";
 import { Outlet } from "react-router-dom";
 
 export default function AppLayout() {
@@ -9,6 +10,8 @@ export default function AppLayout() {
         <Header />
 
         <Outlet />
+
+        <Footer />
       </div>
     </ScrollProvider>
   );
