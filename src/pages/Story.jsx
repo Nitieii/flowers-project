@@ -76,12 +76,14 @@ function Story() {
           ref={(el) => (chaptersRef.current[index] = el)}
         >
           <video
-            playsinline={true}
             src={StoryBg1}
             autoPlay
             loop
             muted={isMute}
             className="-z-10 h-screen w-screen object-cover"
+            loading="lazy"
+            // eslint-disable-next-line react/no-unknown-property
+            playsinline
           />
 
           <div className="absolute top-0 h-full w-full bg-black bg-opacity-20">

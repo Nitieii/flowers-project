@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ScrollContext from "../context/ScrollContext";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -32,6 +32,7 @@ import { VscUnmute, VscMute } from "react-icons/vsc";
 const LandingPage = () => {
   const navigate = useNavigate();
   const [isMute, setIsMute] = useState(true);
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const slideImages = [slide_image_1, slide_image_2, slide_image_3];
 
   const stories = storiesData.map((_, index) => ({
@@ -41,6 +42,13 @@ const LandingPage = () => {
 
   const targetRef = useContext(ScrollContext);
 
+  useEffect(() => {
+    const videoElement = document.getElementById("background-video");
+    videoElement.addEventListener("loadeddata", () => {
+      setVideoLoaded(true);
+    });
+  }, []);
+
   function handleNavigateToStory(id) {
     navigate(`/story/${id}`);
   }
@@ -48,13 +56,20 @@ const LandingPage = () => {
   return (
     <div className="relative">
       <div className="relative">
+        {!videoLoaded && (
+          <div className="absolute top-0 left-0 z-10 flex h-full w-full items-center justify-center bg-black">
+            <p className="text-white">Loading...</p>
+          </div>
+        )}
         <video
-          playsinline={true}
+          id="background-video"
           src={videoBg}
           autoPlay
+          playsInline
           loop
           muted={isMute}
-          className="-z-10 w-screen object-cover"
+          loading="lazy"
+          className={`-z-10 w-screen object-cover ${videoLoaded ? '' : 'hidden'}`}
         />
 
         <div className="absolute top-0 z-10 h-full w-full bg-black bg-opacity-0 text-white opacity-0 duration-300 hover:bg-opacity-20 hover:opacity-100">
