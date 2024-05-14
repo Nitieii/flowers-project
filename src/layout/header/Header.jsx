@@ -81,7 +81,7 @@ function Header() {
               ${isTopPage && currentPath === "/" ? "text-white" : ""} 
               ${currentPath === "/aboutUs" ? "opacity-100" : "opacity-50"}`}
             >
-              Về chúng tôi
+              Về chúng mình
             </li>
           </NavLink>
         </ul>
