@@ -1,5 +1,6 @@
-import { useRef, useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ScrollContext from "../context/ScrollContext";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import {
@@ -38,7 +39,7 @@ const LandingPage = () => {
     image: slideImages[index],
   }));
 
-  const storyRef = useRef();
+  const targetRef = useContext(ScrollContext);
 
   return (
     <div className="relative">
@@ -77,7 +78,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="mt-14" id={"story-section"}>
+      <div className="mt-14" ref={targetRef}>
         <h2 className="text-center text-[32px] font-semibold">CÂU CHUYỆN</h2>
 
         <div className="">

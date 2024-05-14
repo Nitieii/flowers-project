@@ -59,13 +59,14 @@ function Story() {
     };
   }, []);
 
-  console.log(story.content.length);
+  console.log(story.background[0]);
+  console.log(StoryBg1);
 
   if (!story) {
     return <div>Story not found</div>;
   }
   return (
-    <div className="scrollbar-hide-y h-screen w-full snap-y snap-mandatory overflow-y-scroll scroll-smooth duration-300">
+    <div className="scrollbar-hide-y h-screen w-full snap-y snap-mandatory overflow-y-scroll scroll-smooth duration-300 bg-black">
       {story.content.map((chapter, index) => (
         <div
           className="relative h-screen w-full snap-start"
@@ -74,7 +75,7 @@ function Story() {
           ref={(el) => (chaptersRef.current[index] = el)}
         >
           <video
-            src={story.video}
+            src={story.background[index]}
             autoPlay
             loop
             muted={isMute}
@@ -192,13 +193,20 @@ function Story() {
 
       <div className="absolute right-0 top-0 flex h-screen w-32 flex-col justify-center bg-black bg-opacity-20 text-white">
         {story.content.map((_, index) => (
-          <div key={index} className="flex">
+          <div key={index} className="relative flex">
+            <button
+              className="fixed top-0 bg-black bg-opacity-30 p-2 text-start duration-300 hover:bg-opacity-70"
+              onClick={() => navigate("/")}
+            >
+              Back to Homepage
+            </button>
+
             <div
               className={`${currentChapter === index ? "" : "bg-opacity-0"} h-full w-1 bg-yellow-500 duration-300`}
             ></div>
             <a
               href={`chapter-${index}`}
-              className={`${currentChapter === index ? "font-semibold" : ""} p-2`}
+              className={`${currentChapter === index ? "font-semibold" : ""} w-full bg-black bg-opacity-0 p-2 hover:bg-opacity-40`}
               onClick={(e) => {
                 e.preventDefault();
                 const target = e.target;

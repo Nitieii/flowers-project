@@ -1,12 +1,21 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
 import LogoLight from "../../assets/Logo/Logo-light.png";
 import LogoDark from "../../assets/Logo/Logo-dark.png";
+import ScrollContext from "../../context/ScrollContext";
 
-function Header() {
+function Header( ) {
   const currentPath = useLocation().pathname;
   const [isTopPage, setIsTopPage] = useState(true);
+
+  const targetRef = useContext(ScrollContext);
+
+  const scrollToStorySection = () => {
+    if (targetRef.current) {
+      targetRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   // Set state isTopPage to true when scroll
   useEffect(() => {
@@ -44,7 +53,7 @@ function Header() {
               Trang chủ
             </li>
           </NavLink>
-          <NavLink to={"/story"}>
+          <button onClick={scrollToStorySection}>
             <li
               className={`duration-300 hover:opacity-100
               ${isTopPage && currentPath === "/" ? "text-white" : ""} 
@@ -52,7 +61,7 @@ function Header() {
             >
               Câu chuyện
             </li>
-          </NavLink>
+          </button>
 
           <li
             className={`cursor-default text-[30px] font-normal opacity-100 duration-300 ${
