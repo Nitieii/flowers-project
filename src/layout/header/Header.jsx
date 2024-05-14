@@ -41,7 +41,7 @@ function Header() {
               ${isTopPage && currentPath === "/" ? "text-white" : ""} 
               ${currentPath === "/" ? "opacity-100" : "opacity-50"}`}
             >
-              TRANG CHỦ
+              Trang chủ
             </li>
           </NavLink>
           <NavLink to={"/story"}>
@@ -50,7 +50,7 @@ function Header() {
               ${isTopPage && currentPath === "/" ? "text-white" : ""} 
               ${currentPath === "/story" ? "opacity-100" : "opacity-50"}`}
             >
-              CÂU CHUYỆN
+              Câu chuyện
             </li>
           </NavLink>
 
@@ -72,7 +72,7 @@ function Header() {
               ${isTopPage && currentPath === "/" ? "text-white" : ""} 
               ${currentPath === "/quizStart" ? "opacity-100" : "opacity-50"}`}
             >
-              QUIZ
+              Quiz
             </li>
           </NavLink>
           <NavLink to={"/aboutUs"}>
@@ -81,7 +81,7 @@ function Header() {
               ${isTopPage && currentPath === "/" ? "text-white" : ""} 
               ${currentPath === "/aboutUs" ? "opacity-100" : "opacity-50"}`}
             >
-              VỀ CHÚNG TÔI
+              Về chúng tôi
             </li>
           </NavLink>
         </ul>
