@@ -2,10 +2,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { VscUnmute, VscMute } from "react-icons/vsc";
 
-import StoryBg1 from "../assets/video/story1.mp4";
-import StoryBg2 from "../assets/video/story2.mp4";
-import StoryBg3 from "../assets/video/story3.mp4";
-import StoryBg4 from "../assets/video/story4.mp4";
+import StoryBg1 from "/assets/video/story1.mp4";
+import StoryBg2 from "/assets/video/story2.mp4";
+import StoryBg3 from "/assets/video/story3.mp4";
+import StoryBg4 from "/assets/video/story4.mp4";
 
 import ScrollNextIcon from "../assets/StoryPageIcons/chevron-down.svg";
 
@@ -78,8 +78,8 @@ function Story() {
           />
 
           <div className="absolute top-0 h-full w-full bg-black bg-opacity-20">
-            <div className="absolute left-[10%] top-[50%] w-[546px] text-white">
-              <div className="h-[350px] border-b ">
+            <div className="absolute bottom-0 left-[10%] w-[546px] text-white">
+              <div className="h-[400px]">
                 {index === 0 && id === String(1) && (
                   <div className="mb-2 flex items-end gap-3">
                     <h1 className="font-tanWaltzingMathilde text-[40px] leading-tight">
@@ -95,11 +95,61 @@ function Story() {
                   </div>
                 )}
 
-                <h3 className="font-float text-3xl">Chapter {index + 1}:</h3>
+                {index === 0 && id === String(2) && (
+                  <div className="relative mb-2 flex h-[100px] w-[400px] items-end gap-3">
+                    <h1 className="font-tanWaltzingMathilde absolute top-0 w-full text-[80px] leading-tight">
+                      Em hoa
+                    </h1>
+
+                    <h1 className="absolute left-[63px] top-0 font-vivaldi text-[70px] leading-none">
+                      có thể
+                    </h1>
+
+                    <h1 className="absolute left-[120px] top-[35px] w-full font-montserrat text-[20px] italic leading-tight ">
+                      trao bất chợt
+                    </h1>
+
+                    <h1 className="absolute left-[64px] top-[70px] w-full font-montserrat text-[20px] italic leading-tight ">
+                      nở bừng
+                    </h1>
+
+                    <h1 className="absolute left-[155px] top-[50px] w-full font-vivaldi text-[45px] leading-tight">
+                      niềm vui
+                    </h1>
+                  </div>
+                )}
+
+                {index === 0 && id === String(3) && (
+                  <div className="relative mb-2 flex h-[100px] w-[400px] items-end gap-3">
+                    <h1 className="font-tanWaltzingMathilde absolute top-0 text-[80px] leading-tight">
+                      H
+                    </h1>
+
+                    <h1 className="absolute left-[63px] top-0 font-vivaldi text-[70px] leading-none">
+                      oa
+                    </h1>
+
+                    <h1 className="absolute left-[120px] top-[35px] w-full font-montserrat text-[20px] italic leading-tight ">
+                      trao bất chợt
+                    </h1>
+
+                    <h1 className="absolute left-[64px] top-[70px] w-full font-montserrat text-[20px] italic leading-tight ">
+                      nở bừng
+                    </h1>
+
+                    <h1 className="absolute left-[155px] top-[50px] w-full font-vivaldi text-[45px] leading-tight">
+                      niềm vui
+                    </h1>
+                  </div>
+                )}
+
+                <h3 className="font-float text-3xl">
+                  Chapter {index + 1}: {story.chaperTitle[index]}
+                </h3>
 
                 <p className="text-lg">{chapter}</p>
               </div>
-              <div className="mt-2 flex items-center">
+              <div className="mt-2 flex items-center border-t">
                 <div className="relative h-10 w-10">
                   <img className="absolute -top-1" src={ScrollNextIcon} />
                   <img className="absolute top-1" src={ScrollNextIcon} />
