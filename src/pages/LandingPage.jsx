@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import {
   EffectCoverflow,
   Pagination,
@@ -36,6 +37,8 @@ const LandingPage = () => {
     ...storiesData[index],
     image: slideImages[index],
   }));
+
+  const storyRef = useRef();
 
   return (
     <div className="relative">
@@ -74,8 +77,8 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="mt-14">
-        <h2 className="text-center text-[32px] font-medium">CÂU CHUYỆN</h2>
+      <div className="mt-14" id={"story-section"}>
+        <h2 className="text-center text-[32px] font-semibold">CÂU CHUYỆN</h2>
 
         <div className="">
           <Swiper

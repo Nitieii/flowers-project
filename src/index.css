@@ -30,6 +30,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+body {
+  background: #F4F0E8;
+}
+
 html {
   scroll-behavior: smooth;
 }

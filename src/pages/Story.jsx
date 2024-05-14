@@ -2,10 +2,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { VscUnmute, VscMute } from "react-icons/vsc";
 
-import StoryBg1 from "/assets/video/story1.mp4";
-import StoryBg2 from "/assets/video/story2.mp4";
-import StoryBg3 from "/assets/video/story3.mp4";
-import StoryBg4 from "/assets/video/story4.mp4";
+import StoryBg1 from "../assets/video/story1.mp4";
+import StoryBg2 from "../assets/video/story2.mp4";
+import StoryBg3 from "../assets/video/story3.mp4";
+import StoryBg4 from "../assets/video/story4.mp4";
 
 import ScrollNextIcon from "../assets/StoryPageIcons/chevron-down.svg";
 
@@ -25,6 +25,8 @@ function Story() {
     video: storyVideos[index],
   }));
   const story = stories.find((story) => story.id === parseInt(id));
+
+  const navigate = useNavigate();
 
   // Highlight the chapter on view
   useEffect(() => {
@@ -57,6 +59,8 @@ function Story() {
     };
   }, []);
 
+  console.log(story.content.length);
+
   if (!story) {
     return <div>Story not found</div>;
   }
@@ -79,7 +83,7 @@ function Story() {
 
           <div className="absolute top-0 h-full w-full bg-black bg-opacity-20">
             <div className="absolute bottom-0 left-[10%] w-[546px] text-white">
-              <div className="h-[400px]">
+              <div className="h-[500px]">
                 {index === 0 && id === String(1) && (
                   <div className="mb-2 flex items-end gap-3">
                     <h1 className="font-tanWaltzingMathilde text-[40px] leading-tight">
@@ -96,48 +100,52 @@ function Story() {
                 )}
 
                 {index === 0 && id === String(2) && (
-                  <div className="relative mb-2 flex h-[100px] w-[400px] items-end gap-3">
-                    <h1 className="font-tanWaltzingMathilde absolute top-0 w-full text-[80px] leading-tight">
-                      Em hoa
+                  <div className="relative mb-2 flex h-[170px] w-[600px] items-end gap-3">
+                    <h1 className="font-tanWaltzingMathilde absolute top-0 w-full text-[100px] leading-tight">
+                      E
                     </h1>
 
-                    <h1 className="absolute left-[63px] top-0 font-vivaldi text-[70px] leading-none">
+                    <h1 className="font-tanWaltzingMathilde absolute left-[73px] top-[30px] w-full text-[75px] leading-tight">
+                      m
+                    </h1>
+
+                    <h1 className=" absolute left-[170px] top-[-15px] w-full font-vivaldi text-[140px] italic leading-tight">
+                      hoa
+                    </h1>
+
+                    <h1 className="absolute left-[73px] top-[10px] font-tanMonCheri text-[30px] leading-none">
                       có thể
                     </h1>
 
-                    <h1 className="absolute left-[120px] top-[35px] w-full font-montserrat text-[20px] italic leading-tight ">
-                      trao bất chợt
+                    <h1 className="absolute left-[220px] top-[10px] w-full font-tanMonCheri text-[30px] leading-none">
+                      tự mua
                     </h1>
 
-                    <h1 className="absolute left-[64px] top-[70px] w-full font-montserrat text-[20px] italic leading-tight ">
-                      nở bừng
-                    </h1>
-
-                    <h1 className="absolute left-[155px] top-[50px] w-full font-vivaldi text-[45px] leading-tight">
-                      niềm vui
+                    <h1 className="absolute bottom-0 left-0 w-full font-tanMonCheri text-[36px] leading-none">
+                      cho chính mình
                     </h1>
                   </div>
                 )}
 
                 {index === 0 && id === String(3) && (
-                  <div className="relative mb-2 flex h-[100px] w-[400px] items-end gap-3">
-                    <h1 className="font-tanWaltzingMathilde absolute top-0 text-[80px] leading-tight">
+                  <div className="relative mb-2 flex h-[150px] w-[300px] items-end gap-3">
+                    <h1 className="font-tanWaltzingMathilde absolute top-0 text-[120px] leading-tight">
                       H
                     </h1>
 
-                    <h1 className="absolute left-[63px] top-0 font-vivaldi text-[70px] leading-none">
+                    <h1 className="absolute left-[93px] top-[10px] font-vivaldi text-[91px] leading-none">
                       oa
                     </h1>
 
-                    <h1 className="absolute left-[120px] top-[35px] w-full font-montserrat text-[20px] italic leading-tight ">
+                    <h1 className="absolute left-[160px] top-[55px] w-full font-montserrat text-[26px] italic leading-tight">
                       trao bất chợt
                     </h1>
 
-                    <h1 className="absolute left-[64px] top-[70px] w-full font-montserrat text-[20px] italic leading-tight ">
+                    <h1 className="absolute left-[93px] top-[105px] font-montserrat text-[26px] italic leading-tight">
                       nở bừng
                     </h1>
 
-                    <h1 className="absolute left-[155px] top-[50px] w-full font-vivaldi text-[45px] leading-tight">
+                    <h1 className="absolute left-[210px] top-[78px] w-full font-vivaldi text-[58.5px] leading-tight">
                       niềm vui
                     </h1>
                   </div>
@@ -147,15 +155,17 @@ function Story() {
                   Chapter {index + 1}: {story.chaperTitle[index]}
                 </h3>
 
-                <p className="text-lg">{chapter}</p>
+                <p className="text-md w-[500px] italic">{chapter}</p>
               </div>
-              <div className="mt-2 flex items-center border-t">
-                <div className="relative h-10 w-10">
-                  <img className="absolute -top-1" src={ScrollNextIcon} />
-                  <img className="absolute top-1" src={ScrollNextIcon} />
+
+              {currentChapter + 1 !== story.content.length && (
+                <div className="mt-2 flex items-center border-t">
+                  <div className="relative h-10 w-10">
+                    <img className="absolute" src={ScrollNextIcon} />
+                  </div>
+                  Kéo xuống để tiếp tục
                 </div>
-                Kéo xuống để tiếp tục
-              </div>
+              )}
             </div>
           </div>
         </div>
@@ -167,6 +177,16 @@ function Story() {
           onClick={() => setIsMute(!isMute)}
         >
           {isMute ? <VscMute /> : <VscUnmute />}
+        </button>
+      </div>
+
+      <div className="absolute bottom-20 left-[10%]">
+        <button
+          className={`btn w-36 ${id === String(2) && currentChapter === 1 ? "opacity-100" : "opacity-0"}`}
+          onClick={() => navigate("/quizStart")}
+          disabled={!(id === String(2) && currentChapter === 1)}
+        >
+          Quiz
         </button>
       </div>
 
