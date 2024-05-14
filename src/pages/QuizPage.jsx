@@ -60,7 +60,7 @@ const QuizzPage = () => {
         >
           {questions.question}
         </h2>
-        <div className="flex flex-col justify-center items-center mb-[150px]">
+        <div className="flex flex-col justify-center items-center mb-[150px] max-sm:mb-[120px]">
           {questions.options.map((item) => (
             <QuizzAnswer
               key={item.id}
@@ -74,7 +74,7 @@ const QuizzPage = () => {
       <div className="bg-white flex ">
         <div className="max-container flex flex-row justify-center  items-center py-[20px] ">
           <div
-            className={`w-[200px] h-[16px] bg-[#EDE8E3] rounded-full mr-[14px] `}
+            className={`w-[200px] h-[16px] bg-[#EDE8E3] rounded-full mr-[14px] max-sm:w-[100px]`}
           >
             <div
               className={`h-[16px]  rounded-full transition-colors duration-700 ${
