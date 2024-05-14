@@ -15,20 +15,20 @@ function QuizStart() {
   return (
     <div className="relative flex items-center justify-center">
       <div className="flex cursor-none flex-col items-center text-[32px]">
-        <h1 className="font-semibold">FIND OUT</h1>
+        <h1 className="font-semibold">TÌM HIỂU</h1>
         <span className="flex items-end gap-2 font-semibold">
           <h1 className="text-[#546641] underline underline-offset-4">
-            YOUR TYPE
+            LOẠI HOA
           </h1>
-          <h3 className="text-[28px]">OF</h3>
-          <h1 className="text-[#FF4611]">FLOWERS</h1>
+          <h3 className="text-[28px]">CỦA</h3>
+          <h1 className="text-[#FF4611]">BẠN</h1>
         </span>
 
         <Link
           to="/quiz"
-          className="btn btn-lg mt-10 w-[120px] bg-[#546641] font-medium text-white hover:bg-[#546641d3]"
+          className="btn btn-lg mt-10 w-[200px] bg-[#546641] font-medium  text-white hover:bg-[#546641d3]"
         >
-          START
+          BẮT ĐẦU
         </Link>
       </div>
 

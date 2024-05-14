@@ -13,6 +13,6 @@ export const ScrollProvider = ({ children }) => {
 };
 
 ScrollProvider.propTypes = {
-  children: PropTypes.node.isRequired, // Validating children as a node
+  children: PropTypes.node.isRequired,
 };
 export default ScrollContext;

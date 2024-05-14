@@ -35,10 +35,11 @@ export default {
         float: ["Float", "sans-serif"],
       },
       colors: {
-        primary: "#314527",
-        secondary: "#EDE8E3",
+        primary: "#657558",
+        secondary: "#6B6966",
+        "pale-gray": "#ECE4D9",
         "coral-red": "#FF6452",
-        "slate-gray": "#6D6D6D",
+        "slate-gray": "#D6D3C8",
       },
       boxShadow: {
         "3xl": "0 10px 40px rgba(0, 0, 0, 0.1)",

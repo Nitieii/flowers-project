@@ -5,7 +5,7 @@ import LogoLight from "../../assets/Logo/Logo-light.png";
 import LogoDark from "../../assets/Logo/Logo-dark.png";
 import ScrollContext from "../../context/ScrollContext";
 
-function Header( ) {
+function Header() {
   const currentPath = useLocation().pathname;
   const [isTopPage, setIsTopPage] = useState(true);
 
@@ -42,7 +42,7 @@ function Header( ) {
     >
       <div>
         <ul
-          className={`my-4 flex items-center justify-center gap-[133px] text-lg font-semibold`}
+          className={`my-4 flex items-center justify-center gap-[133px] text-lg font-semibold text-primary`}
         >
           <NavLink to={"/"}>
             <li
@@ -65,7 +65,7 @@ function Header( ) {
 
           <li
             className={`cursor-default text-[30px] font-normal opacity-100 duration-300 ${
-              currentPath === "/" && isTopPage ? "text-white" : "text-black"
+              currentPath === "/" && isTopPage ? "text-white" : "text-primary"
             }`}
           >
             {currentPath === "/" && isTopPage ? (

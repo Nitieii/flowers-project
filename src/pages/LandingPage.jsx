@@ -41,6 +41,10 @@ const LandingPage = () => {
 
   const targetRef = useContext(ScrollContext);
 
+  function handleNavigateToStory(id) {
+    navigate(`/story/${id}`);
+  }
+
   return (
     <div className="relative">
       <div className="relative">
@@ -79,7 +83,9 @@ const LandingPage = () => {
       </div>
 
       <div className="mt-14" ref={targetRef}>
-        <h2 className="text-center text-[32px] font-semibold">CÂU CHUYỆN</h2>
+        <h2 className="text-center text-[32px] font-semibold text-primary">
+          CÂU CHUYỆN
+        </h2>
 
         <div className="">
           <Swiper
@@ -124,8 +130,8 @@ const LandingPage = () => {
                     Lorem commodo fugiat.
                   </p>
                   <button
-                    className="btn h-[39px] min-h-[39px] w-[120px] bg-[#546641] font-medium text-white opacity-0 hover:bg-[#546641c9]"
-                    onClick={() => navigate(`/story/${story.id}`)}
+                    className="btn h-[39px] min-h-[39px] w-[120px] bg-primary font-medium text-white opacity-0 hover:bg-[#546641c9]"
+                    onClick={() => handleNavigateToStory(story.id)}
                   >
                     Xem thêm
                   </button>

@@ -3,42 +3,42 @@
     "id": 1,
     "title": "Có một loài hoa không tàn",
     "description": "rure eiusmod sit cillum laborum occaecat ex fugiat elit non fugiat i irure eu veniam id qui. Velit amet ut ipsum irure incididunt. Velit Lorem do irure ut eu voluptate irure Lorem commodo fugiat.",
-    "chaperTitle": ["", ""],
+    "chapterTitle": ["", ""],
     "content": [
       "Em thấy hoa đẹp mà? Nhưng kiểu gì chả tàn, rồi lại vứt đi. Anh từng nói vu vơ như vậy vào ngày 8/3. Câu nói đó gắn chặt với tôi tới hiện tại, khiến tôi ngậm ngùi đè nén một yêu cầu tưởng như rất phiền hà: Anh có thể tặng hoa cho em không? Khi những cửa hàng quanh chợ rực rỡ hơn hẳn và các cô gái ai nấy ôm một bó hoa tươi, tôi cũng không khỏi chạnh lòng.",
       "Cũng đúng vào hôm đấy, những bó hoa màu đỏ, màu hồng được trưng bày quanh khắp con phố Hà Nội, trên những chiếc xe đạp hoa và sau cửa kính các tiệm. Tôi bắt gặp một người đàn ông vừa đi làm về, trên người vẫn mặc bộ đồng phục của công ty, đang nhìn ngắm kỹ lưỡng để chọn được bó hoa ưng mắt nhất. Một bó hoa nho nhỏ, cho một cô gái may mắn."
     ],
     "background": [
-      "/src/assets/video/story1.mp4",
-      "/src/assets/video/story2.mp4"
+      "../assets/video/story1.mp4",
+      "../assets/video/story2.mp4"
     ]
   },
   {
     "id": 2,
     "title": "Em có thể tự mua hoa cho chính mình",
     "description": "rure eiusmod sit cillum laborum occaecat ex fugiat elit non fugiat i irure eu veniam id qui. Velit amet ut ipsum irure incididunt. Velit Lorem do irure ut eu voluptate irure Lorem commodo fugiat.",
-    "chaperTitle": ["Cuộc sống đơn sắc", "Thức tỉnh bừng sắc"],
+    "chapterTitle": ["Cuộc sống đơn sắc", "Thức tỉnh bừng sắc"],
     "content": [
       "Trong một góc phố của trung tâm thủ đô, Trang - một trưởng phòng phải làm việc cuối tuần. Cả tháng qua, Trang chưa từng được nghỉ cuối tuần, bởi cô ấy đã dành hết tâm sức cho một chiến dịch Marketing lớn của công ty. Ánh nắng hoàng hôn len lỏi qua từng khung cửa văn phòng nhưng với Trang xung quanh cô dường như chỉ có hai màu đen, trắng. Qua quãng thời gian dài làm việc cật lực cho dự án, cô dường như quên đi cuộc sống ngoài kia thế nào.",
       "Đồng hồ điểm 17h, Trang lặng lẽ rời khỏi văn phòng. Hôm nay, cô hòa mình vào dòng chảy của thủ đô nhộn nhịp, rảo bước trên vỉa hè để tới ga tàu điện. Thoáng chút cô ngửi thấy một mùi hương thơm ngào ngạt từ một tiệm hoa ở một góc phố. Có lẽ tiệm hoa này mới mở gần đây hoặc bấy lâu nay cô không hề để ý tới nó."
     ],
     "background": [
-      "/src/assets/video/story1.mp4",
-      "/src/assets/video/story2.mp4"
+      "../assets/video/story1.mp4",
+      "../assets/video/story2.mp4"
     ]
   },
   {
     "id": 3,
     "title": "Hoa trao bất chợt nở bừng niềm vui",
     "description": "rure eiusmod sit cillum laborum occaecat ex fugiat elit non fugiat i irure eu veniam id qui. Velit amet ut ipsum irure incididunt. Velit Lorem do irure ut eu voluptate irure Lorem commodo fugiat.",
-    "chaperTitle": ["Cuộc sống đơn sắc", "Thức tỉnh bừng sắc"],
+    "chapterTitle": ["Cuộc sống đơn sắc", "Thức tỉnh bừng sắc"],
     "content": [
       "Trong một góc phố của trung tâm thủ đô, Trang - một trưởng phòng phải làm việc cuối tuần. Cả tháng qua, Trang chưa từng được nghỉ cuối tuần, bởi cô ấy đã dành hết tâm sức cho một chiến dịch Marketing lớn của công ty. Ánh nắng hoàng hôn len lỏi qua từng khung cửa văn phòng nhưng với Trang xung quanh cô dường như chỉ có hai màu đen, trắng. Qua quãng thời gian dài làm việc cật lực cho dự án, cô dường như quên đi cuộc sống ngoài kia thế nào.",
       "Đồng hồ điểm 17h, Trang lặng lẽ rời khỏi văn phòng. Hôm nay, cô hòa mình vào dòng chảy của thủ đô nhộn nhịp, rảo bước trên vỉa hè để tới ga tàu điện. Thoáng chút cô ngửi thấy một mùi hương thơm ngào ngạt từ một tiệm hoa ở một góc phố. Có lẽ tiệm hoa này mới mở gần đây hoặc bấy lâu nay cô không hề để ý tới nó."
     ],
     "background": [
-      "/src/assets/video/story1.mp4",
-      "/src/assets/video/story2.mp4"
+      "../assets/video/story1.mp4",
+      "../assets/video/story2.mp4"
     ]
   }
 ]

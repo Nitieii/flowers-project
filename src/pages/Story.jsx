@@ -58,15 +58,16 @@ function Story() {
       });
     };
   }, []);
+  console.log(story.chapterTitle[0]);
 
-  console.log(story.background[0]);
-  console.log(StoryBg1);
+  // console.log(story.background[0]);
+  // console.log(StoryBg1);
 
   if (!story) {
     return <div>Story not found</div>;
   }
   return (
-    <div className="scrollbar-hide-y h-screen w-full snap-y snap-mandatory overflow-y-scroll scroll-smooth duration-300 bg-black">
+    <div className="scrollbar-hide-y h-screen w-full snap-y snap-mandatory overflow-y-scroll scroll-smooth bg-black duration-300">
       {story.content.map((chapter, index) => (
         <div
           className="relative h-screen w-full snap-start"
@@ -75,7 +76,7 @@ function Story() {
           ref={(el) => (chaptersRef.current[index] = el)}
         >
           <video
-            src={story.background[index]}
+            src={StoryBg1}
             autoPlay
             loop
             muted={isMute}
@@ -153,7 +154,7 @@ function Story() {
                 )}
 
                 <h3 className="font-float text-3xl">
-                  Chapter {index + 1}: {story.chaperTitle[index]}
+                  Chapter {index + 1}: {story.chapterTitle[index]}
                 </h3>
 
                 <p className="text-md w-[500px] italic">{chapter}</p>
@@ -191,14 +192,14 @@ function Story() {
         </button>
       </div>
 
-      <div className="absolute right-0 top-0 flex h-screen w-32 flex-col justify-center bg-black bg-opacity-20 text-white">
+      <div className="absolute right-0 top-0 flex h-screen w-24 flex-col justify-center bg-black bg-opacity-20 text-white">
         {story.content.map((_, index) => (
           <div key={index} className="relative flex">
             <button
-              className="fixed top-0 bg-black bg-opacity-30 p-2 text-start duration-300 hover:bg-opacity-70"
+              className="fixed top-0 bg-black bg-opacity-30 p-2 text-start text-sm duration-300 hover:bg-opacity-70"
               onClick={() => navigate("/")}
             >
-              Back to Homepage
+              Quay về trang chủ
             </button>
 
             <div
@@ -206,7 +207,7 @@ function Story() {
             ></div>
             <a
               href={`chapter-${index}`}
-              className={`${currentChapter === index ? "font-semibold" : ""} w-full bg-black bg-opacity-0 p-2 hover:bg-opacity-40`}
+              className={`${currentChapter === index ? "font-semibold" : ""} w-full bg-black bg-opacity-0 p-2 text-sm hover:bg-opacity-40`}
               onClick={(e) => {
                 e.preventDefault();
                 const target = e.target;
@@ -219,6 +220,7 @@ function Story() {
               }}
             >
               Chapter {index + 1}
+              <div className="">{story.chapterTitle[index]}</div>
             </a>
           </div>
         ))}
