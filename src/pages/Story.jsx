@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import { VscUnmute, VscMute } from "react-icons/vsc";
 
@@ -9,9 +9,24 @@ import StoryBg4 from "../assets/video/story4.mp4";
 
 import ScrollNextIcon from "../assets/StoryPageIcons/chevron-down.svg";
 
+import storiesData from "../data/stories.json";
+
 function Story() {
+  const { id } = useParams();
   const [isMute, setIsMute] = useState(true);
   const navigate = useNavigate();
+
+  const storyVideos = [StoryBg1, StoryBg2, StoryBg3, StoryBg4];
+
+  const stories = storiesData.map((_, index) => ({
+    ...storiesData[index],
+    video: storyVideos[index],
+  }));
+  const story = stories.find((story) => story.id === parseInt(id));
+
+  if (!story) {
+    return <div>Story not found</div>;
+  }
 
   return (
     <div

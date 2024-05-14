@@ -32,14 +32,14 @@ const QuizzPage = () => {
     <div className="bg-[#EDE8E3] ">
       <div className="max-container ">
         <div className="pt-[40px] px-[40px] pb-[90px] flex flex-row justify-between items-center max-sm:pb-[60px]">
-          <h3 className="font-semibold mx-auto text-2xl font-poppins ">
+          <h3 className="font-semibold mx-auto text-2xl font-montserrat ">
             Flowers Quiz #{index + 1}
           </h3>
           <img className="" src={close} alt="close" width={50} height={50} />
         </div>
 
         <h2
-          className={`text-center font-semibold text-[28px] text-primary font-poppins mb-[100px] transition-all duration-700  max-sm:px-4 max-sm:mb-[60px] ${
+          className={`text-center font-semibold text-[28px] text-primary font-montserrat mb-[100px] transition-all duration-700  max-sm:px-4 max-sm:mb-[60px] ${
             isSelected ? "-translate-y-2" : ""
           }`}
         >

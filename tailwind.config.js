@@ -28,6 +28,9 @@ export default {
       fontFamily: {
         //using popins font
         poppins: ["Poppins", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+        vivaldi: ["Vivaldi", "sans-serif"],
+        tanMonCheri: ["Tan-Mon_cheri", "sans-serif"],
       },
       colors: {
         primary: "#314527",

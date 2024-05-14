@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     element: <QuizPage />,
   },
   {
-    path: "/story",
+    path: "/story/:id",
     element: <Story />,
   },
   {

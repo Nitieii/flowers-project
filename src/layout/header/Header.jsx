@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
+import LogoLight from "../../assets/Logo/Logo-light.png";
+import LogoDark from "../../assets/Logo/Logo-dark.png";
+
 function Header() {
   const currentPath = useLocation().pathname;
   const [isTopPage, setIsTopPage] = useState(true);
@@ -24,13 +27,13 @@ function Header() {
 
   return (
     <header
-      className={`duration-300 w-full justify-center z-20
+      className={`z-20 w-full justify-center duration-300
       ${currentPath === "/" ? "fixed" : ""}
-      ${!isTopPage ? "fixed shadow-xl bg-white" : "bg-transparent"}`}
+      ${!isTopPage ? "fixed bg-white shadow-xl" : "bg-transparent"}`}
     >
       <div>
         <ul
-          className={`flex justify-center gap-[133px] my-4 text-lg font-semibold`}
+          className={`my-4 flex items-center justify-center gap-[133px] text-lg font-semibold`}
         >
           <NavLink to={"/"}>
             <li
@@ -52,11 +55,15 @@ function Header() {
           </NavLink>
 
           <li
-            className={`font-normal text-[30px] opacity-100 duration-300 cursor-default ${
+            className={`cursor-default text-[30px] font-normal opacity-100 duration-300 ${
               currentPath === "/" && isTopPage ? "text-white" : "text-black"
             }`}
           >
-            Flower Go
+            {currentPath === "/" && isTopPage ? (
+              <img src={LogoDark} alt="logo" className="w-52" />
+            ) : (
+              <img src={LogoLight} alt="logo" className="w-52" />
+            )}
           </li>
 
           <NavLink to={"/quizStart"}>

@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   EffectCoverflow,
@@ -11,11 +13,11 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+import storiesData from "../data/stories.json";
+
 import slide_image_1 from "../assets/SliderImgs/flower1.jpg";
 import slide_image_2 from "../assets/SliderImgs/flower2.jpg";
 import slide_image_3 from "../assets/SliderImgs/flower3.jpg";
-import slide_image_4 from "../assets/SliderImgs/flower4.jpg";
-import slide_image_5 from "../assets/SliderImgs/flower5.jpg";
 
 import PrevIcon from "../assets/LandingPageIcons/prevNav.svg";
 import NextIcon from "../assets/LandingPageIcons/nextNav.svg";
@@ -24,18 +26,16 @@ import videoBg from "../assets/video/homepage.mp4";
 import "./landing.css";
 
 import { VscUnmute, VscMute } from "react-icons/vsc";
-import { useState } from "react";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   const [isMute, setIsMute] = useState(true);
+  const slideImages = [slide_image_1, slide_image_2, slide_image_3];
 
-  const slideImages = [
-    slide_image_1,
-    slide_image_2,
-    slide_image_3,
-    slide_image_4,
-    slide_image_5,
-  ];
+  const stories = storiesData.map((_, index) => ({
+    ...storiesData[index],
+    image: slideImages[index],
+  }));
 
   return (
     <div className="relative">
@@ -50,21 +50,32 @@ const LandingPage = () => {
 
         <div className="absolute top-0 z-10 h-full w-full bg-black bg-opacity-0 text-white opacity-0 duration-300 hover:bg-opacity-20 hover:opacity-100">
           <div className="absolute bottom-[14%] left-[16%] w-[546px]">
-            <h1 className="mb-4 text-[40px] font-semibold">
-              The Art of Flower
-            </h1>
+            <div className="relative ms-8 h-[168px] w-[300px]">
+              <h1 className="absolute top-0 font-tanMonCheri text-[40px]">
+                Nghĩ khác
+              </h1>
+              <h1 className="absolute right-[55%] top-[20%] font-vivaldi text-[40px]">
+                về
+              </h1>
+              <h1 className="absolute bottom-0 right-0 font-vivaldi text-[160px] font-medium leading-none">
+                hoa
+              </h1>
+            </div>
 
-            <p>
-              rure eiusmod sit cillum laborum occaecat ex fugiat elit non fugiat
-              i irure eu veniam id qui. Velit amet ut ipsum irure incididunt.
-              Velit Lorem do irure ut eu voluptate irure Lorem commodo fugiat.
+            <p className="-mt-4">
+              Nhiều người chỉ đơn giản nhìn hoa như một vật trang trí vô thường.
+              Nhưng với nhóm 8, hoa còn hơn thế. Hoa là sứ giả của niềm vui và
+              hạnh phúc, là lời xin lỗi chân thành, là biểu tượng của lòng biết
+              ơn, là lời chúc tốt đẹp và là biểu tượng vĩnh cửu của tình yêu.
+              Hoa chính là cầu nối giúp con người kết nối với nhau qua những
+              cung bậc cảm xúc đa chiều...
             </p>
           </div>
         </div>
       </div>
 
       <div className="mt-14">
-        <h2 className="text-center text-[32px] font-medium">STORIES</h2>
+        <h2 className="text-center text-[32px] font-medium">CÂU CHUYỆN</h2>
 
         <div className="">
           <Swiper
@@ -88,17 +99,17 @@ const LandingPage = () => {
             modules={[EffectCoverflow, Pagination, Navigation, EffectFade]}
             className="swiper_container"
           >
-            {slideImages.map((image) => (
-              <SwiperSlide key={image}>
+            {stories.map((story) => (
+              <SwiperSlide key={story.id}>
                 <div className="flex flex-col items-center gap-6 duration-300">
                   <img
-                    src={image}
+                    src={story.image}
                     alt="slide_image"
                     className="h-[400px] w-[800px] rounded-lg object-cover blur-sm"
                   />
 
                   <h3 className="text-[32px] font-medium opacity-0">
-                    THE ART OF FLOWERS
+                    {story.title}
                   </h3>
 
                   <p className="opacity-0">
@@ -107,7 +118,10 @@ const LandingPage = () => {
                     incididunt. Velit Lorem do irure ut eu voluptate irure Lorem
                     commodo fugiat.
                   </p>
-                  <button className="btn h-[39px] min-h-[39px] w-[120px] bg-[#546641] font-medium text-white opacity-0 hover:bg-[#546641c9]">
+                  <button
+                    className="btn h-[39px] min-h-[39px] w-[120px] bg-[#546641] font-medium text-white opacity-0 hover:bg-[#546641c9]"
+                    onClick={() => navigate(`/story/${story.id}`)}
+                  >
                     Xem thêm
                   </button>
                 </div>
@@ -127,7 +141,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="absolute right-0 top-10 z-10">
+      <div className="absolute right-0 top-20 z-10">
         <button
           className="btn relative rounded-none border-none bg-black bg-opacity-40 text-xl text-white hover:bg-black hover:bg-opacity-60"
           onClick={() => setIsMute(!isMute)}
