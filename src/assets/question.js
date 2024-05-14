@@ -52,15 +52,7 @@ const question = [
       {
         id: "B",
         value: "Doe",
-      },
-      {
-        id: "C",
-        value: "Jane",
-      },
-      {
-        id: "D",
-        value: "Smith",
-      },
+      }
     ],
   },
   {
@@ -74,15 +66,7 @@ const question = [
       {
         id: "B",
         value: "30",
-      },
-      {
-        id: "C",
-        value: "40",
-      },
-      {
-        id: "D",
-        value: "50",
-      },
+      }
     ],
   },
 ];
