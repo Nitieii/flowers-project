@@ -28,19 +28,24 @@ const QuizzPage = () => {
   };
 
   const handleClose = () => {
-    navigate("/quizStart");
-    setIndex(0);
-    setIsSelected(false);
-  }
+    const isConfirmed = window.confirm(
+      "Tiến dộ của bạn sẽ mât. Bạn có muốn tiếp tục không?",
+    );
+    if (isConfirmed) {
+      navigate("/quizStart");
+      setIndex(0);
+      setIsSelected(false);
+    }
+  };
 
   const progress = ((index + 1) / question.length) * 100;
   console.log(progress);
 
   return (
-    <div className="bg-[#EDE8E3] ">
-      <div className="max-container ">
-        <div className="pt-[40px] px-[40px] pb-[90px] flex flex-row justify-between items-center max-sm:pb-[60px]">
-          <h3 className="font-semibold mx-auto text-2xl font-montserrat ">
+    <div className="h-screen bg-[#EDE8E3]">
+      <div className="max-container">
+        <div className="flex flex-row items-center justify-between px-[40px] pb-[90px] pt-[40px] max-sm:pb-[60px]">
+          <h3 className="mx-auto font-montserrat text-2xl font-semibold">
             Flowers Quiz #{index + 1}
           </h3>
           <img
@@ -54,13 +59,13 @@ const QuizzPage = () => {
         </div>
 
         <h2
-          className={`text-center font-semibold text-[28px] text-primary font-montserrat mb-[100px] transition-all duration-700  max-sm:px-4 max-sm:mb-[60px] ${
+          className={`mb-[100px] text-center font-montserrat text-[28px] font-semibold text-primary transition-all duration-700  max-sm:mb-[60px] max-sm:px-4 ${
             isSelected ? "-translate-y-2" : ""
           }`}
         >
           {questions.question}
         </h2>
-        <div className="flex flex-col justify-center items-center ">
+        <div className="flex flex-col items-center justify-center ">
           {questions.options.map((item) => (
             <QuizzAnswer
               key={item.id}
@@ -71,10 +76,10 @@ const QuizzPage = () => {
           ))}
         </div>
       </div>
-      <div className="bg-white flex mt-[150px] max-sm:mt-[120px]">
-        <div className="max-container flex flex-row justify-center  items-center py-[20px] ">
+      <div className="fixed bottom-0 right-0  flex w-screen bg-white max-sm:mt-[120px]">
+        <div className="max-container flex flex-row items-center  justify-center py-[20px] ">
           <div
-            className={`w-[200px] h-[16px] bg-[#EDE8E3] rounded-full mr-[14px] max-sm:w-[100px]`}
+            className={`mr-[14px] h-[16px] w-[200px] rounded-full bg-[#EDE8E3] max-sm:w-[100px]`}
           >
             <div
               className={`h-[16px]  rounded-full transition-colors duration-700 ${
@@ -83,15 +88,16 @@ const QuizzPage = () => {
               style={{ width: `${progress}%` }}
             ></div>
           </div>
-          <p className="mr-[209px] text-[#757575] font-[900] max-sm:mr-[90px]">
+          <p className="mr-[209px] font-[900] text-[#757575] max-sm:mr-[90px]">
             {index + 1}/{question.length}
           </p>
 
           <button
-            className={`bg-[#71845C] text-white px-[77px] py-[20px] rounded-md font-bold text-base uppercase text-nowrap  transition-colors duration-700 max-sm:px-[40px] max-sm:py-[15px] ${
+            className={`text-nowrap rounded-md bg-[#71845C] px-[77px] py-[20px] text-base font-bold uppercase text-white transition-colors duration-700 max-sm:px-[40px] max-sm:py-[15px] ${
               !isSelected ? "cursor-not-allowed bg-[#747475]" : "cursor-pointer"
             }`}
             onClick={handleNextClick}
+            disabled={!isSelected}
           >
             Tiếp theo
           </button>

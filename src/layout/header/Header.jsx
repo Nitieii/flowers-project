@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 import LogoLight from "../../assets/Logo/Logo-light.png";
 import LogoDark from "../../assets/Logo/Logo-dark.png";
@@ -11,7 +11,13 @@ function Header() {
 
   const targetRef = useContext(ScrollContext);
 
+  const navigate = useNavigate();
+
   const scrollToStorySection = () => {
+    if (currentPath !== "/") {
+      navigate("/");
+    }
+
     if (targetRef.current) {
       targetRef.current.scrollIntoView({ behavior: "smooth" });
     }
