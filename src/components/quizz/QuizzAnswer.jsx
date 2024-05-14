@@ -9,14 +9,14 @@ const QuizzAnswer = ({ option, selected, onClick }) => {
       onClick={onClick}
     >
       <p
-        className={`text-center py-[8px] px-[16px]  rounded-full font-semibold text-[20px] transition-colors duration-700 ${
+        className={`text-center py-[8px] px-[16px]  rounded-full font-semibold text-[20px] transition-colors duration-700 max-sm:text-[18px] max-sm:px-[12px] max-sm:py-[4px] ${
           selected ? "text-[#546641] bg-[#fff]" : "text-[#000] bg-secondary"
         }`}
       >
         {option.id}
       </p>
       <p
-        className={`font-semibold text-[20px] transition-colors duration-700 ${
+        className={`font-semibold text-[20px] transition-colors duration-700 max-sm:text-[18px] ${
           selected ? "text-[#fff]" : "text-[#000]"
         }`}
       >
