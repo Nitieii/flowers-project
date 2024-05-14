@@ -3,7 +3,7 @@ import { LandingPage, QuizPage } from "../pages";
 import AppLayout from "../ui/AppLayout";
 import QuizStart from "../pages/QuizStart";
 import Story from "../pages/Story";
-import QuizzBanner from "../components/quizz/QuizzBanner";
+// import QuizzBanner from "../components/quizz/QuizzBanner";
 import Test from "../pages/Test";
 
 const router = createBrowserRouter([

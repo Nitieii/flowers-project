@@ -12,6 +12,16 @@
   src: url(./font/DFVNTan-MON_CHERI.ttf);
 }
 
+@font-face {
+  font-family: Tan-Waltzing_mathilde;
+  src: url(./font/DFVNTan-WALTZING_MATHILDE.ttf);
+}
+
+@font-face {
+  font-family: Float;
+  src: url(./font/DFVNFloat.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +31,10 @@
 }
 
 html {
+  scroll-behavior: smooth;
+}
+
+.scroll-smooth {
   scroll-behavior: smooth;
 }
 

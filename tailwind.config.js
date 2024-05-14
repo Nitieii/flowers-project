@@ -31,6 +31,8 @@ export default {
         montserrat: ["Montserrat", "sans-serif"],
         vivaldi: ["Vivaldi", "sans-serif"],
         tanMonCheri: ["Tan-Mon_cheri", "sans-serif"],
+        tanWaltzingMathilde: ["Tan-Waltzing_mathilde", "sans-serif"],
+        float: ["Float", "sans-serif"],
       },
       colors: {
         primary: "#314527",

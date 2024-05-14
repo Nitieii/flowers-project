@@ -108,15 +108,16 @@ const LandingPage = () => {
                     className="h-[400px] w-[800px] rounded-lg object-cover blur-sm"
                   />
 
-                  <h3 className="text-[32px] font-medium opacity-0">
+                  <h3 className="text-[32px] font-medium opacity-0 ">
                     {story.title}
                   </h3>
 
-                  <p className="opacity-0">
+                  <p className="font-medium opacity-0">
                     rure eiusmod sit cillum laborum occaecat ex fugiat elit non
                     fugiat i irure eu veniam id qui. Velit amet ut ipsum irure
                     incididunt. Velit Lorem do irure ut eu voluptate irure Lorem
-                    commodo fugiat.
+                    commodo fugiat.Velit Lorem do irure ut eu voluptate irure
+                    Lorem commodo fugiat.
                   </p>
                   <button
                     className="btn h-[39px] min-h-[39px] w-[120px] bg-[#546641] font-medium text-white opacity-0 hover:bg-[#546641c9]"
