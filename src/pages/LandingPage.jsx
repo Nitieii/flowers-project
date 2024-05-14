@@ -49,6 +49,7 @@ const LandingPage = () => {
     <div className="relative">
       <div className="relative">
         <video
+          playsinline={true}
           src={videoBg}
           autoPlay
           loop

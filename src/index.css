@@ -72,6 +72,10 @@ body::-webkit-scrollbar-thumb:hover {
   /* IE and Edge */
 }
 
+video::-webkit-media-controls-start-playback-button {
+  display: none;
+}
+
 @layer components {
   .max-container {
     max-width: 1440px;

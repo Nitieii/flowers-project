@@ -76,6 +76,7 @@ function Story() {
           ref={(el) => (chaptersRef.current[index] = el)}
         >
           <video
+            playsinline={true}
             src={StoryBg1}
             autoPlay
             loop
@@ -219,8 +220,8 @@ function Story() {
                 });
               }}
             >
-              Chapter {index + 1}
-              <div className="">{story.chapterTitle[index]}</div>
+              Chapter {index + 1} <br />
+              {story.chapterTitle[index]}
             </a>
           </div>
         ))}
