@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { VscUnmute, VscMute } from "react-icons/vsc";
 
-import StoryBg1 from "../assets/video/story1.mp4";
+import StoryBg1 from "../assets/video/homepage.mp4";
 import StoryBg2 from "../assets/video/story2.mp4";
 import StoryBg3 from "../assets/video/story3.mp4";
 import StoryBg4 from "../assets/video/story4.mp4";
