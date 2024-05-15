@@ -7,6 +7,9 @@ import StoryBg2 from "../assets/video/story2.mp4";
 import StoryBg3 from "../assets/video/story3.mp4";
 import StoryBg4 from "../assets/video/story4.mp4";
 
+import StoryBgVideo from "../assets/video/homepage.mp4";
+import StoryBgImg from "../assets/StoryPageBackgrounds/bg1.jpg";
+
 import ScrollNextIcon from "../assets/StoryPageIcons/chevron-down.svg";
 
 import storiesData from "../data/stories.json";
@@ -18,11 +21,16 @@ function Story() {
   // Initialize chaptersRef as an array
   const chaptersRef = useRef([]);
 
-  const storyVideos = [StoryBg1, StoryBg2, StoryBg3, StoryBg4];
+  const storyBackground = [
+    [StoryBgImg, StoryBgVideo],
+    [StoryBgImg, StoryBgVideo],
+    [StoryBgImg, StoryBgVideo],
+    [StoryBgImg, StoryBgVideo],
+  ];
 
   const stories = storiesData.map((_, index) => ({
     ...storiesData[index],
-    video: storyVideos[index],
+    background: storyBackground[index],
   }));
   const story = stories.find((story) => story.id === parseInt(id));
 
