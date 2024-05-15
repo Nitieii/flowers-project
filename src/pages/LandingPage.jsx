@@ -1,5 +1,5 @@
-import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import ScrollContext from "../context/ScrollContext";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -33,6 +33,7 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const [isMute, setIsMute] = useState(true);
   const slideImages = [slide_image_1, slide_image_2, slide_image_3];
+  const location = useLocation();
 
   const stories = storiesData.map((_, index) => ({
     ...storiesData[index],
@@ -45,11 +46,17 @@ const LandingPage = () => {
     navigate(`/story/${id}`);
   }
 
+  useEffect(() => {
+    if (location.state?.scrollToTarget && targetRef.current) {
+      targetRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location, targetRef]);
+
   return (
     <div className="relative">
       <div className="relative">
         <video
-          playsinline={true}
+          playsInline
           src={videoBg}
           autoPlay
           loop

@@ -14,12 +14,12 @@ function Header() {
   const navigate = useNavigate();
 
   const scrollToStorySection = () => {
-    if (currentPath !== "/") {
-      navigate("/");
-    }
-
-    if (targetRef.current) {
-      targetRef.current.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollToTarget: true } });
+    } else {
+      if (targetRef.current) {
+        targetRef.current.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 

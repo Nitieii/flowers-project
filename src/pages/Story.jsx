@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { VscUnmute, VscMute } from "react-icons/vsc";
 
-import StoryBg1 from "../assets/video/homepage.mp4";
+import StoryBg1 from "/src/assets/video/homepage.mp4";
 import StoryBg2 from "../assets/video/story2.mp4";
 import StoryBg3 from "../assets/video/story3.mp4";
 import StoryBg4 from "../assets/video/story4.mp4";
@@ -58,10 +58,9 @@ function Story() {
       });
     };
   }, []);
-  console.log(story.chapterTitle[0]);
 
-  // console.log(story.background[0]);
-  // console.log(StoryBg1);
+  console.log(typeof story.background[0]);
+  console.log(typeof StoryBg1);
 
   if (!story) {
     return <div>Story not found</div>;
@@ -76,8 +75,8 @@ function Story() {
           ref={(el) => (chaptersRef.current[index] = el)}
         >
           <video
-            playsinline={true}
-            src={StoryBg1}
+            playsInline
+            src={story.background[index]}
             autoPlay
             loop
             muted={isMute}
@@ -104,11 +103,11 @@ function Story() {
 
                 {index === 0 && id === String(2) && (
                   <div className="relative mb-2 flex h-[170px] w-[600px] items-end gap-3">
-                    <h1 className="font-tanWaltzingMathilde absolute top-0 w-full text-[100px] leading-tight">
+                    <h1 className="absolute top-0 w-full font-tanWaltzingMathilde text-[100px] leading-tight">
                       E
                     </h1>
 
-                    <h1 className="font-tanWaltzingMathilde absolute left-[73px] top-[30px] w-full text-[75px] leading-tight">
+                    <h1 className="absolute left-[73px] top-[30px] w-full font-tanWaltzingMathilde text-[75px] leading-tight">
                       m
                     </h1>
 
@@ -132,7 +131,7 @@ function Story() {
 
                 {index === 0 && id === String(3) && (
                   <div className="relative mb-2 flex h-[150px] w-[300px] items-end gap-3">
-                    <h1 className="font-tanWaltzingMathilde absolute top-0 text-[120px] leading-tight">
+                    <h1 className="absolute top-0 font-tanWaltzingMathilde text-[120px] leading-tight">
                       H
                     </h1>
 
