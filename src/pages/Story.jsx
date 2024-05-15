@@ -79,15 +79,14 @@ function Story() {
               loading="lazy"
             />
           );
-        else {
+        else
           return (
             <img
-              src={bg}
               key={index}
+              src={bg}
               className={`fixed top-0 h-screen w-screen object-cover opacity-0 duration-[2s] ${currentChapter === index ? "opacity-100" : ""}`}
             />
           );
-        }
       })}
 
       {story.content.map((chapter, index) => (

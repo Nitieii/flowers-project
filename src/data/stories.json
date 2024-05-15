@@ -37,7 +37,7 @@
       "Đồng hồ điểm 17h, Trang lặng lẽ rời khỏi văn phòng. Hôm nay, cô hòa mình vào dòng chảy của thủ đô nhộn nhịp, rảo bước trên vỉa hè để tới ga tàu điện. Thoáng chút cô ngửi thấy một mùi hương thơm ngào ngạt từ một tiệm hoa ở một góc phố. Có lẽ tiệm hoa này mới mở gần đây hoặc bấy lâu nay cô không hề để ý tới nó."
     ],
     "background": [
-      "/assets/video/bg.jpg",
+      "../assets/video/bg.jpg",
       "/assets/video/homepage.mp4"
     ]
   }
