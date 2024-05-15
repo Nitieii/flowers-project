@@ -1,14 +1,8 @@
 .swiper_container {
-    height: 730px;
     /* width: 100vw; */
-    width: 1400px;
+    /* height: 730px;
+    width: 1400px; */
     padding: 2rem 0;
-    position: relative;
-}
-
-.swiper-slide {
-    width: 900px;
-    height: 400px;
     position: relative;
 }
 
@@ -36,11 +30,11 @@
 }
 
 .slider-controller .swiper-button-prev {
-    left: 43%;
+    left: 30%;
 }
 
 .slider-controller .swiper-button-next {
-    right: 43%;
+    right: 30%;
 }
 
 .slider-controller .slider-arrow::after {
@@ -59,4 +53,24 @@
 
 .swiper-pagination .swiper-pagination-bullet-active {
     background: #657558;
+}
+
+@media (min-width: 640px) {
+    .slider-controller .swiper-button-prev {
+        left: 37%;
+    }
+
+    .slider-controller .swiper-button-next {
+        right: 37%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .slider-controller .swiper-button-prev {
+        left: 43%;
+    }
+
+    .slider-controller .swiper-button-next {
+        right: 43%;
+    }
 }

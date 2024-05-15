@@ -95,7 +95,7 @@ function Footer() {
             />
 
             <textarea
-              rows={3} 
+              rows={3}
               className="w-full resize-none rounded border border-gray-400 p-2"
               placeholder="Enter your text here..."
             />

@@ -1,15 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import ScrollContext from "../context/ScrollContext";
-import { Swiper, SwiperSlide } from "swiper/react";
+import useWindowWidth from "../context/useWindowWidth";
 
+import { Swiper, SwiperSlide } from "swiper/react";
 import {
   EffectCoverflow,
   Pagination,
   Navigation,
   EffectFade,
 } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -28,14 +28,14 @@ import videoBg from "../assets/video/homepage.mp4";
 import "./landing.css";
 
 import { VscUnmute, VscMute } from "react-icons/vsc";
-import { useSidebarContext } from "../context/SidebarContext";
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isMute, setIsMute] = useState(true);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const slideImages = [slide_image_1, slide_image_2, slide_image_3];
-  const location = useLocation();
+  const windowWidth = useWindowWidth();
 
   const stories = storiesData.map((_, index) => ({
     ...storiesData[index],
@@ -43,10 +43,6 @@ const LandingPage = () => {
   }));
 
   const targetRef = useContext(ScrollContext);
-
-  const { openSidebar } = useSidebarContext();
-
-  console.log(openSidebar);
 
   useEffect(() => {
     const videoElement = document.getElementById("background-video");
@@ -91,7 +87,7 @@ const LandingPage = () => {
         />
 
         <div className="absolute top-0 z-10 h-full w-full bg-black bg-opacity-20 text-white opacity-100 duration-300 hover:bg-opacity-20 hover:opacity-100 md:bg-opacity-0 md:opacity-0">
-          <div className="absolute bottom-[14%] left-[2%] w-[546px] sm:left-[5%] md:left-[10%] lg:left-[16%]">
+          <div className="absolute bottom-[14%] left-[5%] w-auto md:left-[10%] md:w-[546px] lg:left-[16%]">
             <div className="relative ms-8 h-[168px] w-[300px]">
               <h1 className="absolute top-0 font-tanMonCheri text-[40px]">
                 Nghĩ khác
@@ -116,21 +112,21 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="my-14" ref={targetRef}>
+      <div className="my-4 md:my-14" ref={targetRef}>
         <h2 className="text-center text-[32px] font-semibold text-primary">
           CÂU CHUYỆN
         </h2>
 
         <div className="">
           <Swiper
-            effect={"coverflow"}
+            effect={windowWidth > 1024 ? "coverflow" : ""}
             grabCursor={true}
             centeredSlides={true}
             loop={true}
             slidesPerView={"auto"}
             coverflowEffect={{
               rotate: 0,
-              stretch: 40,
+              stretch: 70,
               depth: 60,
               modifier: 10,
             }}
@@ -141,22 +137,22 @@ const LandingPage = () => {
               clickable: true,
             }}
             modules={[EffectCoverflow, Pagination, Navigation, EffectFade]}
-            className="swiper_container"
+            className="swiper_container h-[660px] w-[320px] sm:w-[600px] md:h-[720px] md:w-[720px] lg:h-[730px] lg:w-[1000px] xl:w-[1200px]"
           >
             {stories.map((story) => (
               <SwiperSlide key={story.id}>
-                <div className="flex flex-col items-center gap-6 duration-300">
+                <div className="flex flex-col items-center gap-3 duration-300 md:gap-2 lg:gap-4 xl:gap-6">
                   <img
                     src={story.image}
                     alt="slide_image"
-                    className="h-[400px] w-[800px] rounded-lg object-cover blur-sm"
+                    className="h-[200px] w-[320px] rounded-lg object-cover blur-sm sm:h-[320px] sm:w-[580px] md:h-[400px] md:w-[720px] lg:h-[400px] lg:w-[800px] "
                   />
 
-                  <h3 className="text-[32px] font-medium opacity-0 ">
+                  <h3 className="w-[320px] text-center text-[20px] font-semibold opacity-0 sm:w-[580px] md:w-[720px] md:text-[32px] md:font-medium lg:w-auto">
                     {story.title}
                   </h3>
 
-                  <p className="font-medium opacity-0">
+                  <p className="w-[320px] font-medium opacity-0 sm:w-[580px] md:w-[680px] lg:w-[800px] xl:w-[1000px]">
                     rure eiusmod sit cillum laborum occaecat ex fugiat elit non
                     fugiat i irure eu veniam id qui. Velit amet ut ipsum irure
                     incididunt. Velit Lorem do irure ut eu voluptate irure Lorem
