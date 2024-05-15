@@ -72,6 +72,10 @@ body::-webkit-scrollbar-thumb:hover {
   /* IE and Edge */
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 video::-webkit-media-controls-start-playback-button {
   display: none;
 }

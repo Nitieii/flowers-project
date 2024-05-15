@@ -28,6 +28,7 @@ import videoBg from "../assets/video/homepage.mp4";
 import "./landing.css";
 
 import { VscUnmute, VscMute } from "react-icons/vsc";
+import { useSidebarContext } from "../context/SidebarContext";
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -42,6 +43,10 @@ const LandingPage = () => {
   }));
 
   const targetRef = useContext(ScrollContext);
+
+  const { openSidebar } = useSidebarContext();
+
+  console.log(openSidebar);
 
   useEffect(() => {
     const videoElement = document.getElementById("background-video");
@@ -82,11 +87,11 @@ const LandingPage = () => {
           loop
           muted={isMute}
           loading="lazy"
-          className={`-z-10 w-screen object-cover ${videoLoaded ? "opacity-100" : "opacity-0"}`}
+          className={`-z-10 h-screen w-screen object-cover ${videoLoaded ? "opacity-100" : "opacity-0"}`}
         />
 
-        <div className="absolute top-0 z-10 h-full w-full bg-black bg-opacity-0 text-white opacity-0 duration-300 hover:bg-opacity-20 hover:opacity-100">
-          <div className="absolute bottom-[14%] left-[16%] w-[546px]">
+        <div className="absolute top-0 z-10 h-full w-full bg-black bg-opacity-20 text-white opacity-100 duration-300 hover:bg-opacity-20 hover:opacity-100 md:bg-opacity-0 md:opacity-0">
+          <div className="absolute bottom-[14%] left-[2%] w-[546px] sm:left-[5%] md:left-[10%] lg:left-[16%]">
             <div className="relative ms-8 h-[168px] w-[300px]">
               <h1 className="absolute top-0 font-tanMonCheri text-[40px]">
                 Nghĩ khác
@@ -99,7 +104,7 @@ const LandingPage = () => {
               </h1>
             </div>
 
-            <p className="-mt-4">
+            <p className="w-[350px] sm:w-[500px] lg:-mt-4 lg:w-auto">
               Nhiều người chỉ đơn giản nhìn hoa như một vật trang trí vô thường.
               Nhưng với nhóm 8, hoa còn hơn thế. Hoa là sứ giả của niềm vui và
               hạnh phúc, là lời xin lỗi chân thành, là biểu tượng của lòng biết
@@ -111,7 +116,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="mt-14" ref={targetRef}>
+      <div className="my-14" ref={targetRef}>
         <h2 className="text-center text-[32px] font-semibold text-primary">
           CÂU CHUYỆN
         </h2>
