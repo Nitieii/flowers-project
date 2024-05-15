@@ -57,7 +57,12 @@ const LandingPage = () => {
   // Scroll to story section when navigate from other page
   useEffect(() => {
     if (location.state?.scrollToTarget && targetRef.current) {
-      targetRef.current.scrollIntoView({ behavior: "smooth" });
+      const rect = targetRef.current.getBoundingClientRect();
+      const offsetTop = rect.top + window.scrollY - 60; // Apply the 60px offset
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
     }
   }, [location, targetRef]);
 

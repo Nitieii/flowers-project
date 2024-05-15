@@ -13,12 +13,20 @@ function Header() {
 
   const navigate = useNavigate();
 
+  // Scroll to the Story Section
   const scrollToStorySection = () => {
     if (location.pathname !== "/") {
       navigate("/", { state: { scrollToTarget: true } });
     } else {
       if (targetRef.current) {
-        targetRef.current.scrollIntoView({ behavior: "smooth" });
+        // Calculate the position manually and apply the offset
+        const rect = targetRef.current.getBoundingClientRect();
+        const offsetTop = rect.top + window.scrollY - 100; // Apply the 100px offset
+
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth",
+        });
       }
     }
   };

@@ -59,32 +59,44 @@ function Story() {
     };
   }, []);
 
-  console.log(typeof story.background[0]);
-  console.log(typeof StoryBg1);
-
   if (!story) {
     return <div>Story not found</div>;
   }
   return (
-    <div className="scrollbar-hide-y h-screen w-full snap-y snap-mandatory overflow-y-scroll scroll-smooth bg-black duration-300">
+    <div className="scrollbar-hide-y h-screen w-full snap-y snap-mandatory overflow-y-scroll scroll-smooth bg-transparent duration-300">
+      {/* Set background of the page base on it type */}
+      {story.background.map((bg, index) => {
+        if (bg.split(".")[1] === "mp4")
+          return (
+            <video
+              key={index}
+              src={bg}
+              className={`fixed top-0 h-screen w-screen object-cover opacity-0 duration-[2s] ${currentChapter === index ? "opacity-100" : ""}`}
+              autoPlay
+              loop
+              muted={isMute}
+              playsInline
+              loading="lazy"
+            />
+          );
+        else {
+          return (
+            <img
+              src={bg}
+              key={index}
+              className={`fixed top-0 h-screen w-screen object-cover opacity-0 duration-[2s] ${currentChapter === index ? "opacity-100" : ""}`}
+            />
+          );
+        }
+      })}
+
       {story.content.map((chapter, index) => (
         <div
-          className="relative h-screen w-full snap-start"
+          className="relative h-screen w-full snap-start bg-transparent"
           key={index}
           id={`chapter-${index}`}
           ref={(el) => (chaptersRef.current[index] = el)}
         >
-          <video
-            src={story.background[0]}
-            autoPlay
-            loop
-            muted={isMute}
-            className="-z-10 h-screen w-screen object-cover"
-            loading="lazy"
-            // eslint-disable-next-line react/no-unknown-property
-            playsinline
-          />
-
           <div className="absolute top-0 h-full w-full bg-black bg-opacity-20">
             <div className="absolute bottom-0 left-[10%] w-[546px] text-white">
               <div className="h-[500px]">
@@ -174,7 +186,6 @@ function Story() {
           </div>
         </div>
       ))}
-
       <div className="absolute right-36 top-10 z-10">
         <button
           className="btn relative rounded-none border-none bg-black bg-opacity-40 text-xl text-white hover:bg-black hover:bg-opacity-60"
@@ -183,7 +194,6 @@ function Story() {
           {isMute ? <VscMute /> : <VscUnmute />}
         </button>
       </div>
-
       <div className="absolute bottom-20 left-[10%]">
         <button
           className={`btn w-36 ${id === String(2) && currentChapter === 1 ? "opacity-100" : "opacity-0"}`}
@@ -193,7 +203,6 @@ function Story() {
           Quiz
         </button>
       </div>
-
       <div className="absolute right-0 top-0 flex h-screen w-24 flex-col justify-center bg-black bg-opacity-20 text-white">
         {story.content.map((_, index) => (
           <div key={index} className="relative flex">
