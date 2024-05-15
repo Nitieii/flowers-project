@@ -175,7 +175,7 @@ function Story() {
               </div>
 
               {currentChapter + 1 !== story.content.length && (
-                <div className="mt-2 flex items-center border-t">
+                <div className="mt-2 inline-flex items-center border-t">
                   <div className="relative h-10 w-10">
                     <img className="absolute" src={ScrollNextIcon} />
                   </div>
