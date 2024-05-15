@@ -10,7 +10,6 @@ function Header() {
   const [isTopPage, setIsTopPage] = useState(true);
 
   const targetRef = useContext(ScrollContext);
-
   const navigate = useNavigate();
 
   // Scroll to the Story Section
@@ -95,10 +94,10 @@ function Header() {
               ${isTopPage && currentPath === "/" ? "text-white" : ""} 
               ${currentPath === "/quizStart" ? "opacity-100" : "opacity-50"}`}
             >
-              Quiz
+              Khám phá (Quiz)
             </li>
           </NavLink>
-          <NavLink to={"/aboutUs"}>
+          <NavLink to={"/contact"}>
             <li
               className={`duration-300 hover:opacity-100
               ${isTopPage && currentPath === "/" ? "text-white" : ""} 

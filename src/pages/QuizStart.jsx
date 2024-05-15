@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 function QuizStart() {
   return (
     <div className="relative flex items-center justify-center">
-      <div className="flex cursor-none flex-col items-center text-[32px]">
+      <div className="flex h-screen cursor-none flex-col items-center justify-center text-[32px]">
         <h1 className="font-semibold">TÌM HIỂU</h1>
         <span className="flex items-end gap-2 font-semibold">
           <h1 className="text-[#546641] underline underline-offset-4">

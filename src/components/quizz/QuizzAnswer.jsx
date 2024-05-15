@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const QuizzAnswer = ({ option, selected, onClick }) => {
   console.log(selected);
   return (
@@ -23,6 +25,15 @@ const QuizzAnswer = ({ option, selected, onClick }) => {
       </p>
     </div>
   );
+};
+
+QuizzAnswer.propTypes = {
+  option: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    value: PropTypes.string.isRequired,
+  }).isRequired,
+  selected: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default QuizzAnswer;

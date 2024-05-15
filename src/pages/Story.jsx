@@ -2,13 +2,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { VscUnmute, VscMute } from "react-icons/vsc";
 
-import StoryBg1 from "/src/assets/video/homepage.mp4";
-import StoryBg2 from "../assets/video/story2.mp4";
-import StoryBg3 from "../assets/video/story3.mp4";
-import StoryBg4 from "../assets/video/story4.mp4";
-
-import StoryBgVideo from "../assets/video/homepage.mp4";
-import StoryBgImg from "../assets/StoryPageBackgrounds/bg1.jpg";
+import StoryBgVideo1 from "../assets/StoryPageBackgrounds/bgVideo1.mp4";
+import StoryBgVideo2 from "../assets/StoryPageBackgrounds/bgVideo2.mp4";
+import StoryBgVideo3 from "../assets/StoryPageBackgrounds/bgVideo3.mp4";
+import StoryBgImg1 from "../assets/StoryPageBackgrounds/bgImage1.jpg";
+import StoryBgImg2 from "../assets/StoryPageBackgrounds/bgImage2.jpg";
+import StoryBgImg3 from "../assets/StoryPageBackgrounds/bgImage3.jpg";
 
 import ScrollNextIcon from "../assets/StoryPageIcons/chevron-down.svg";
 
@@ -22,10 +21,9 @@ function Story() {
   const chaptersRef = useRef([]);
 
   const storyBackground = [
-    [StoryBgImg, StoryBgVideo],
-    [StoryBgImg, StoryBgVideo],
-    [StoryBgImg, StoryBgVideo],
-    [StoryBgImg, StoryBgVideo],
+    [StoryBgImg1, StoryBgVideo1],
+    [StoryBgImg2, StoryBgVideo2],
+    [StoryBgImg3, StoryBgVideo3],
   ];
 
   const stories = storiesData.map((_, index) => ({
