@@ -13,8 +13,11 @@ import { Link } from "react-router-dom";
 
 function QuizStart() {
   return (
-    <div className="relative flex items-center justify-center">
-      <div className="flex h-screen cursor-none flex-col items-center justify-center text-[32px]">
+    <div
+      className="relative flex items-center justify-center"
+      style={{ height: window.innerHeight - 54 }}
+    >
+      <div className="flex cursor-none flex-col items-center justify-center text-[32px] z-10">
         <h1 className="font-semibold">TÌM HIỂU</h1>
         <span className="flex items-end gap-2 font-semibold">
           <h1 className="text-[#546641] underline underline-offset-4">
@@ -37,13 +40,25 @@ function QuizStart() {
         <img className="absolute right-0 top-4" src={Image2} />
         <img className="absolute right-[120px] top-[450px]" src={Image7} />
         <img className="absolute bottom-0 right-0" src={Image6} />
-        <img className="absolute bottom-[41px] left-2/3" src={Image4} />
-        <img className="absolute bottom-[178px] left-1/4" src={Image8} />
+        <img
+          className="absolute bottom-[41px] left-2/3 hidden sm:block"
+          src={Image4}
+        />
+        <img
+          className="absolute bottom-[178px] left-1/4 hidden md:block"
+          src={Image8}
+        />
         <img className="absolute left-[73px] top-[264px]" src={Image5} />
-        <img className="absolute left-[223px] top-[163px]" src={Image3} />
+        <img
+          className="absolute left-[223px] top-[163px] hidden sm:block"
+          src={Image3}
+        />
         <img className="absolute right-0 top-0" src={Image9} />
         <img className="absolute bottom-0 left-0" src={Image10} />
-        <img className="absolute left-2/3 top-[66px]" src={Image11} />
+        <img
+          className="absolute left-2/3 top-[66px] hidden lg:block"
+          src={Image11}
+        />
       </div>
     </div>
   );

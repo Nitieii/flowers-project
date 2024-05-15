@@ -37,8 +37,8 @@ function Footer() {
 
   return (
     <footer className="relative bg-white text-gray-800">
-      <div className="mx-auto mt-4 flex max-w-6xl flex-col justify-between px-4 pt-2 sm:flex-row">
-        <div className="mb-4 sm:mb-0">
+      <div className="mx-auto mt-4 flex max-w-6xl flex-col  flex-wrap justify-between gap-4 px-4 pt-2 sm:flex-row">
+        <div className="mb-0 sm:mb-4">
           <img src={LogoLight} alt="Logo" className="h-12" />
 
           <div className="relative ms-1 mt-3 h-[168px] w-[300px]">
@@ -53,17 +53,18 @@ function Footer() {
             </h1>
           </div>
         </div>
-        <div className="flex flex-col flex-wrap gap-4 text-xl font-semibold">
+
+        <div className="-mt-6 flex flex-col flex-wrap gap-4 text-xl font-semibold sm:mt-0">
           <NavLink
             to="/"
-            className="mx-2 duration-300 hover:text-secondary"
+            className="mx-2 text-nowrap duration-300 hover:text-secondary"
             activeclassname="font-bold"
           >
             Trang chủ
           </NavLink>
           <button
             to="/"
-            className="mx-2 text-start duration-300 hover:text-secondary"
+            className="mx-2 text-nowrap text-start duration-300 hover:text-secondary"
             onClick={scrollToStorySection}
           >
             Câu chuyện
@@ -71,21 +72,21 @@ function Footer() {
 
           <NavLink
             to="/quizStart"
-            className="mx-2 duration-300 hover:text-secondary"
+            className="mx-2 text-nowrap duration-300 hover:text-secondary"
             activeclassname="font-bold"
           >
             Khám phá (Quiz)
           </NavLink>
           <NavLink
             to="/contact"
-            className="mx-2 duration-300 hover:text-secondary"
+            className="mx-2 text-nowrap duration-300 hover:text-secondary"
             activeclassname="font-bold"
           >
             Về chúng mình
           </NavLink>
         </div>
 
-        <div className="flex w-[350px] flex-col gap-2">
+        <div className="mb-5 flex w-[350px] flex-col gap-2">
           <p className="font-float text-[20px]">Hãy để lại lời nhắn của bạn:</p>
           <form onSubmit={handleSubmit} className="flex flex-col gap-2">
             <input
@@ -106,7 +107,7 @@ function Footer() {
           </form>
         </div>
       </div>
-      <div className="bottom-0 w-full bg-gray-800 py-2 text-center text-white">
+      <div className="bottom-0 w-full bg-gray-800 py-2 text-center text-white hover:underline">
         <a href="https://techtack.com.vn">Thiết kế bởi TechTack</a>
       </div>
     </footer>
