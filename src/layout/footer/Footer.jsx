@@ -21,17 +21,17 @@ function Footer() {
           <img src={LogoLight} alt="Logo" className="h-12" />
         </div>
         <div className="flex flex-col flex-wrap justify-center sm:justify-end">
-          <NavLink to="/" className="mx-2" activeClassName="font-bold">
+          <NavLink to="/" className="mx-2" activeclassname="font-bold">
             Trang chủ
           </NavLink>
-          <NavLink to="/" className="mx-2" activeClassName="font-bold">
+          <NavLink to="/" className="mx-2" activeclassname="font-bold">
             Câu chuyện
           </NavLink>
 
-          <NavLink to="/quizStart" className="mx-2" activeClassName="font-bold">
+          <NavLink to="/quizStart" className="mx-2" activeclassname="font-bold">
             Khám phá (Quiz)
           </NavLink>
-          <NavLink to="/contact" className="mx-2" activeClassName="font-bold">
+          <NavLink to="/contact" className="mx-2" activeclassname="font-bold">
             Về chúng mình
           </NavLink>
         </div>

@@ -54,6 +54,7 @@ const LandingPage = () => {
     navigate(`/story/${id}`);
   }
 
+  // Scroll to story section when navigate from other page
   useEffect(() => {
     if (location.state?.scrollToTarget && targetRef.current) {
       targetRef.current.scrollIntoView({ behavior: "smooth" });
@@ -76,7 +77,7 @@ const LandingPage = () => {
           loop
           muted={isMute}
           loading="lazy"
-          className={`-z-10 w-screen object-cover ${videoLoaded ? "" : "hidden"}`}
+          className={`-z-10 w-screen object-cover ${videoLoaded ? "opacity-100" : "opacity-0"}`}
         />
 
         <div className="absolute top-0 z-10 h-full w-full bg-black bg-opacity-0 text-white opacity-0 duration-300 hover:bg-opacity-20 hover:opacity-100">

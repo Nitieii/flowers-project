@@ -75,7 +75,7 @@ function Story() {
           ref={(el) => (chaptersRef.current[index] = el)}
         >
           <video
-            src={StoryBg1}
+            src={story.background[0]}
             autoPlay
             loop
             muted={isMute}
