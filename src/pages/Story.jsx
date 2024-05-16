@@ -195,7 +195,7 @@ function Story() {
         </div>
       ))}
 
-      <div className="absolute right-0 sm:right-36 top-10 z-10">
+      <div className="absolute right-0 top-10 z-10 sm:right-36">
         <button
           className="btn relative rounded-none border-none bg-black bg-opacity-40 text-xl text-white hover:bg-black hover:bg-opacity-60"
           onClick={() => setIsMute(!isMute)}

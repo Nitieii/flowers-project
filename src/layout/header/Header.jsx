@@ -59,13 +59,16 @@ function Header() {
     >
       <div>
         <ul
-          className={`my-4 flex w-screen items-center justify-center text-lg font-semibold text-primary md:gap-6 lg:gap-[70px] xl:gap-[133px]`}
+          className={`text-md my-4 flex w-screen items-center justify-center font-semibold text-primary md:gap-6 lg:gap-[70px] xl:gap-[133px]`}
         >
           <button
             className="btn absolute left-[20px] top-[20px] block border-none bg-transparent px-2 hover:bg-stone-400 hover:bg-opacity-50 md:hidden"
             onClick={() => setOpenSidebar(!openSidebar)}
           >
-            <RxHamburgerMenu color="white" className="h-9 w-9" />
+            <RxHamburgerMenu
+              color={!isTopPage ? "#000" : "white"}
+              className="h-9 w-9"
+            />
           </button>
 
           <NavLink to={"/"} className="hidden md:block">

@@ -51,9 +51,9 @@ function Sidebar() {
         </button>
       </div>
 
-      <ul className="mt-10 flex flex-col ">
+      <ul className="mt-10 flex flex-col gap-5">
         <button
-          className="text-start text-3xl duration-300 hover:opacity-70"
+          className="text-start text-xl duration-300 hover:opacity-70"
           onClick={() => handleNavigation("/")}
         >
           <li className={`text-nowrap duration-300 hover:opacity-100`}>
@@ -61,7 +61,7 @@ function Sidebar() {
           </li>
         </button>
         <button
-          className="text-start text-3xl duration-300 hover:opacity-70"
+          className="text-start text-xl duration-300 hover:opacity-70"
           onClick={scrollToStorySection}
         >
           <li className={`text-nowrap duration-300 hover:opacity-100`}>
@@ -70,7 +70,7 @@ function Sidebar() {
         </button>
 
         <button
-          className="text-start text-3xl duration-300 hover:opacity-70"
+          className="text-start text-xl duration-300 hover:opacity-70"
           onClick={() => handleNavigation("/quizStart")}
         >
           <li className={`text-nowrap duration-300 hover:opacity-100`}>
@@ -78,7 +78,7 @@ function Sidebar() {
           </li>
         </button>
         <button
-          className="text-start text-3xl duration-300 hover:opacity-70"
+          className="text-start text-xl duration-300 hover:opacity-70"
           onClick={() => handleNavigation("/contact")}
         >
           <li className={`text-nowrap duration-300 hover:opacity-100`}>
