@@ -6,6 +6,8 @@ import AboutUsCard from "../components/AboutUsCard";
 import Card1 from "../assets/AboutUsPage/Card1.png";
 import Card2 from "../assets/AboutUsPage/Card2.png";
 import Card3 from "../assets/AboutUsPage/Card3.png";
+import Divider from "../assets/AboutUsPage/SectionDivider.png";
+import MemberCard from "../components/MemberCard";
 
 function AboutUs() {
   const [isTopPage, setIsTopPage] = useState(true);
@@ -115,6 +117,30 @@ function AboutUs() {
           </div>
         </div>
       </section>
+
+      <img src={Divider} className="h-[250px] w-screen object-cover" />
+
+      <div className="container mx-auto my-12">
+        <h3 className="mb-8 font-tanMonCheri text-[40px]">Thành viên nhóm</h3>
+
+        <div className="flex gap-6">
+          <MemberCard image={BgImage1} id="TTQT49B11769">
+            Đào Trọng <br /> Quang Minh
+          </MemberCard>
+          <MemberCard image={BgImage1} id="TTQT49B1934">
+            Hoàng Nguyễn <br /> Ánh Vân
+          </MemberCard>
+          <MemberCard image={BgImage1} id="TTQT49B11769">
+            Hà <br /> Anh Tuấn
+          </MemberCard>
+          <MemberCard image={BgImage1} id="TTQT49B11769">
+            Nguyễn Hà <br /> Thảo Trang
+          </MemberCard>
+          <MemberCard image={BgImage1} id="TTQT49B11769">
+            Nguyễn <br /> Đức Hùng
+          </MemberCard>
+        </div>
+      </div>
     </div>
   );
 }
