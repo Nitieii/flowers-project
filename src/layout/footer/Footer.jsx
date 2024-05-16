@@ -37,8 +37,8 @@ function Footer() {
 
   return (
     <footer className="relative bg-white text-gray-800">
-      <div className="mx-auto mt-4 flex max-w-6xl flex-col  flex-wrap justify-between gap-4 px-4 pt-2 sm:flex-row">
-        <div className="mb-0 sm:mb-4">
+      <div className="mx-auto mb-4 mt-4 flex max-w-6xl flex-col flex-wrap justify-between gap-4 px-4 pt-2 sm:flex-row">
+        <div className="mb-4 h-[200px] sm:mb-0 md:h-[200px]">
           <img src={LogoLight} alt="Logo" className="h-12" />
 
           <div className="relative ms-1 mt-3 h-[168px] w-[300px]">
