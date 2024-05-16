@@ -69,7 +69,7 @@ function Story() {
     return <div>Story not found</div>;
   }
   return (
-    <div className="scrollbar-hide-y h-screen w-full snap-y snap-mandatory overflow-y-scroll scroll-smooth bg-transparent duration-300">
+    <div className="scrollbar-hide-y h-screen w-screen snap-y snap-mandatory overflow-hidden overflow-y-scroll scroll-smooth bg-transparent duration-300">
       {/* Set background of the page base on it type */}
       {story.background.map((bg, index) => {
         if (bg.split(".")[1] === "mp4")
@@ -97,40 +97,43 @@ function Story() {
 
       {story.content.map((chapter, index) => (
         <div
-          className="relative h-screen w-full snap-start bg-transparent"
+          className="relative h-screen w-screen snap-start bg-transparent"
           key={index}
           id={`chapter-${index}`}
           ref={(el) => (chaptersRef.current[index] = el)}
         >
           <div className="absolute top-0 h-full w-full bg-black bg-opacity-20">
-            <div className="absolute bottom-0 left-[10%] w-[546px] text-white">
-              <div className="h-[500px]">
+            <div className="absolute bottom-0 left-[2%] w-auto min-w-[360px] max-w-[546px] text-white md:w-[546px] lg:left-[10%]">
+              <div className="h-[560px] md:h-[500px]">
                 {index === 0 && id === String(1) && (
-                  <div className="mb-2 flex items-end gap-3">
+                  <div className="-ml-10 mb-2 flex w-auto scale-[75%] items-end gap-2">
                     <h1 className="font-tanWaltzingMathilde text-[40px] leading-tight">
-                      Có 1 <br />
+                      <span className="text-nowrap font-tanWaltzingMathilde">
+                        Có 1
+                      </span>
+                      <br />
                       loài
                     </h1>
                     <h1 className="font-tanWaltzingMathilde text-[80px] leading-tight">
                       hoa
                     </h1>
-                    <h1 className="font-tanWaltzingMathilde text-[40px] italic leading-tight">
+                    <h1 className="text-nowrap font-tanWaltzingMathilde text-[40px] italic leading-tight">
                       không tàn
                     </h1>
                   </div>
                 )}
 
                 {index === 0 && id === String(2) && (
-                  <div className="relative mb-2 flex h-[170px] w-[600px] items-end gap-3">
+                  <div className="relative mb-2 flex h-[170px] w-[360px] scale-[85%] items-end gap-3 md:w-[600px]">
                     <h1 className="absolute top-0 w-full font-tanWaltzingMathilde text-[100px] leading-tight">
                       E
                     </h1>
 
-                    <h1 className="absolute left-[73px] top-[30px] w-full font-tanWaltzingMathilde text-[75px] leading-tight">
+                    <h1 className="absolute left-[73px] top-[30px] font-tanWaltzingMathilde text-[75px] leading-tight">
                       m
                     </h1>
 
-                    <h1 className=" absolute left-[170px] top-[-15px] w-full font-vivaldi text-[140px] italic leading-tight">
+                    <h1 className="absolute left-[170px] top-[-15px] font-vivaldi text-[140px] italic leading-tight">
                       hoa
                     </h1>
 
@@ -138,7 +141,7 @@ function Story() {
                       có thể
                     </h1>
 
-                    <h1 className="absolute left-[220px] top-[10px] w-full font-tanMonCheri text-[30px] leading-none">
+                    <h1 className="absolute left-[220px] top-[10px] font-tanMonCheri text-[30px] leading-none">
                       tự mua
                     </h1>
 
@@ -172,11 +175,11 @@ function Story() {
                   </div>
                 )}
 
-                <h3 className="font-float text-3xl">
+                <h3 className="font-float text-3xl leading-tight">
                   Chapter {index + 1}: {story.chapterTitle[index]}
                 </h3>
 
-                <p className="text-md w-[500px] italic">{chapter}</p>
+                <p className="text-md w-auto italic lg:w-[500px]">{chapter}</p>
               </div>
 
               {currentChapter + 1 !== story.content.length && (
@@ -191,7 +194,8 @@ function Story() {
           </div>
         </div>
       ))}
-      <div className="absolute right-36 top-10 z-10">
+
+      <div className="absolute right-0 sm:right-36 top-10 z-10">
         <button
           className="btn relative rounded-none border-none bg-black bg-opacity-40 text-xl text-white hover:bg-black hover:bg-opacity-60"
           onClick={() => setIsMute(!isMute)}
@@ -199,6 +203,7 @@ function Story() {
           {isMute ? <VscMute /> : <VscUnmute />}
         </button>
       </div>
+
       <div className="absolute bottom-20 left-[10%]">
         <button
           className={`btn w-36 ${id === String(2) && currentChapter === 1 ? "opacity-100" : "opacity-0"}`}
@@ -208,7 +213,8 @@ function Story() {
           Quiz
         </button>
       </div>
-      <div className="absolute right-0 top-0 flex h-screen w-24 flex-col justify-center bg-black bg-opacity-20 text-white">
+
+      <div className="absolute right-0 top-0 hidden h-screen w-24 flex-col justify-center bg-black bg-opacity-20 text-white duration-300 sm:flex">
         {story.content.map((_, index) => (
           <div key={index} className="relative flex">
             <button
