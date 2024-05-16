@@ -37,24 +37,24 @@ function Footer() {
 
   return (
     <footer className="relative bg-white text-gray-800">
-      <div className="mx-auto mt-4 flex max-w-6xl flex-col  flex-wrap justify-between gap-4 px-4 pt-2 sm:flex-row">
+      <div className="mx-auto mt-4 flex max-w-6xl flex-col flex-wrap justify-between gap-4 px-4 pt-2 sm:flex-row">
         <div className="mb-0 sm:mb-4">
-          <img src={LogoLight} alt="Logo" className="h-12" />
+          <img src={LogoLight} alt="Logo" className="h-8" />
 
-          <div className="relative ms-1 mt-3 h-[168px] w-[300px]">
-            <h1 className="absolute top-0 font-tanMonCheri text-[40px]">
+          <div className="relative ms-1 mt-3 h-[84px] w-[150px]">
+            <h1 className="absolute top-0 font-tanMonCheri text-[20px]">
               Nghĩ khác
             </h1>
-            <h1 className="absolute right-[55%] top-[20%] font-vivaldi text-[40px]">
+            <h1 className="absolute right-[55%] top-[20%] font-vivaldi text-[20px]">
               về
             </h1>
-            <h1 className="absolute bottom-0 right-0 font-vivaldi text-[160px] font-medium leading-none">
+            <h1 className="absolute bottom-0 right-0 font-vivaldi text-[80px] font-medium leading-none">
               hoa
             </h1>
           </div>
         </div>
 
-        <div className="-mt-6 flex flex-col flex-wrap gap-4 text-xl font-semibold sm:mt-0">
+        <div className="-mt-6 flex flex-col flex-wrap gap-4 text-sm font-semibold sm:mt-0">
           <NavLink
             to="/"
             className="mx-2 text-nowrap duration-300 hover:text-secondary"
@@ -86,29 +86,31 @@ function Footer() {
           </NavLink>
         </div>
 
-        <div className="mb-5 flex w-[350px] flex-col gap-2">
-          <p className="font-float text-[20px]">Hãy để lại lời nhắn của bạn:</p>
+        <div className="xs:mt-3 mb-5 flex w-[350px] flex-col gap-2 text-xs">
+          <p className="font-float text-[16px]">Hãy để lại lời nhắn của bạn:</p>
           <form onSubmit={handleSubmit} className="flex flex-col gap-2">
             <input
               type="email"
               placeholder="Nhập địa chỉ email của bạn"
-              className="mb-2 mr-0 w-full rounded border border-gray-400 px-3 py-2 sm:mb-0 sm:w-auto"
+              className="mb-2 mr-0 w-full rounded border border-gray-400 px-2 py-2 sm:mb-0 sm:w-auto"
             />
 
             <textarea
               rows={3}
               className="w-full resize-none rounded border border-gray-400 p-2"
-              placeholder="Enter your text here..."
+              placeholder="Điều mà bạn muốn chia sẻ với chúng mình."
             />
-            {/* 
-            <button type="submit" className="btn">
-              Đăng ký
-            </button> */}
+            <button
+              type="submit"
+              className="rounded bg-primary py-2 text-sm text-white"
+            >
+              Gửi
+            </button>
           </form>
         </div>
       </div>
-      <div className="bottom-0 w-full bg-gray-800 py-2 text-center text-white hover:underline">
-        <a href="https://techtack.com.vn">Thiết kế bởi TechTack</a>
+      <div className="bottom-0 w-full bg-gray-800 py-2 text-center text-xs text-white hover:underline">
+        <a href="https://techtack.com.vn">Phát triển bởi TechTack</a>
       </div>
     </footer>
   );

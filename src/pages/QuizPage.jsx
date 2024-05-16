@@ -29,7 +29,7 @@ const QuizzPage = () => {
 
   const handleClose = () => {
     const isConfirmed = window.confirm(
-      "Tiến dộ của bạn sẽ mât. Bạn có muốn tiếp tục không?",
+      "Tiến độ của bạn sẽ mất. Bạn có muốn tiếp tục không?",
     );
     if (isConfirmed) {
       navigate("/quizStart");
