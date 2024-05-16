@@ -19,7 +19,7 @@ import useWindowWidth from "../context/useWindowWidth";
 function Story() {
   const { id } = useParams();
   const [isMute, setIsMute] = useState(true);
-  const [currentChapter, setCurrentChapter] = useState(null);
+  const [currentChapter, setCurrentChapter] = useState(0);
   // Initialize chaptersRef as an array
   const chaptersRef = useRef([]);
 
@@ -68,6 +68,10 @@ function Story() {
         }
       });
     };
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
 
   if (!story) {
@@ -216,23 +220,23 @@ function Story() {
           <div className="absolute left-0 top-10 z-10 sm:right-36">
             <button
               className="btn relative rounded-none border-none bg-black bg-opacity-40 text-xl text-white hover:bg-black hover:bg-opacity-60"
-              onClick={() => setIsMute(!isMute)}
+              onClick={() => navigate("/")}
             >
               <HiOutlineHome />
             </button>
           </div>
           <div className="absolute left-0 top-24 z-10 sm:right-36">
             <button
-              className="btn relative rounded-none border-none bg-black bg-opacity-40 text-xl text-white hover:bg-black hover:bg-opacity-60"
-              onClick={() => navigate("/story/1")}
+              className={`btn relative rounded-none border-none bg-black bg-opacity-40 text-xl text-white hover:bg-black hover:bg-opacity-60 ${id > 1 ? "block" : "hidden"}`}
+              onClick={() => navigate(`/story/${parseInt(id) - 1}`)}
             >
               <GoArrowLeft />
             </button>
           </div>
           <div className="absolute right-0 top-24 z-10 sm:right-36">
             <button
-              className="btn relative rounded-none border-none bg-black bg-opacity-40 text-xl text-white hover:bg-black hover:bg-opacity-60"
-              onClick={() => navigate("/story/3")}
+              className={`btn relative rounded-none border-none bg-black bg-opacity-40 text-xl text-white hover:bg-black hover:bg-opacity-60 ${id < 3 ? "block" : "hidden"}`}
+              onClick={() => navigate(`/story/${parseInt(id) + 1}`)}
             >
               <GoArrowLeft className="rotate-180" />
             </button>
@@ -259,8 +263,8 @@ function Story() {
         </button>
 
         <button
-          className="relative rounded-none border-none bg-black bg-opacity-40 p-2 text-left text-sm  text-white hover:bg-black hover:bg-opacity-60"
-          onClick={() => navigate("/story/1")}
+          className={`relative rounded-none border-none bg-black bg-opacity-40 p-2 text-left text-sm  text-white hover:bg-black hover:bg-opacity-60 ${id > 1 ? "block" : "hidden"}`}
+          onClick={() => navigate(`/story/${parseInt(id) - 1}`)}
         >
           Câu chuyện trước
         </button>
@@ -290,8 +294,8 @@ function Story() {
           </div>
         ))}
         <button
-          className="relative rounded-none border-none bg-black bg-opacity-40 p-2 text-left text-sm  text-white hover:bg-black hover:bg-opacity-60"
-          onClick={() => navigate("/story/3")}
+          className={`relative rounded-none border-none bg-black bg-opacity-40 p-2 text-left text-sm  text-white hover:bg-black hover:bg-opacity-60  ${id < 3 ? "block" : "hidden"}`}
+          onClick={() => navigate(`/story/${parseInt(id) + 1}`)}
         >
           Câu chuyện tiếp theo
         </button>

@@ -36,14 +36,14 @@ function AboutUs() {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="absolute left-0 top-0 h-[500px] w-screen bg-cover bg-center  py-10"
+        className="absolute left-0 top-0 h-[500px] w-screen bg-cover bg-center py-10"
       ></section>
       <div style={isTopPage ? { height: 500 - 55 } : { height: 525 }}></div>
 
       <section className="container mx-auto my-8">
-        <div className="flex justify-center gap-8">
+        <div className="flex flex-col-reverse items-center justify-center gap-8 px-4 lg:flex-row">
           <div className="">
-            <div className="relative ms-20 mt-20 h-[168px] w-[300px] scale-150">
+            <div className="relative h-[168px] w-[300px] sm:ms-20 sm:mt-20 sm:scale-150 ">
               <h1 className="absolute top-0 font-tanMonCheri text-[40px]">
                 Nghĩ khác
               </h1>
@@ -55,7 +55,7 @@ function AboutUs() {
               </h1>
             </div>
 
-            <p className="mt-6 w-[560px] text-justify text-xl italic leading-8">
+            <p className="text-justify text-xl italic leading-8 sm:mt-6 lg:w-[560px]">
               Chào mừng bạn đến với &quot;Nghĩ Khác về Hoa&quot; một sản phẩm
               của Dflower8 - nơi chúng mình đặt nền tảng cho một cái nhìn mới về
               sức mạnh của hoa trong cuộc sống hàng ngày của chúng ta. Hoa không
@@ -68,20 +68,23 @@ function AboutUs() {
           </div>
 
           <div className="">
-            <img src={Image1} className="w-[580px]" />
+            <img
+              src={Image1}
+              className="xs:w-[480px] w-full text-center xl:w-[580px]"
+            />
           </div>
         </div>
       </section>
 
       <section className="container mx-auto mb-10">
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center px-4">
           <img src={Logo} alt="Logo" className="w-[500px]" />
 
-          <h2 className="mb-8 mt-12 font-tanMonCheri text-[40px] tracking-widest">
+          <h2 className="my-4 font-tanMonCheri text-[24px] leading-10 tracking-widest lg:my-8 lg:text-[40px]">
             GIẢI THÍCH Ý NGHĨA THƯƠNG HIỆU
           </h2>
 
-          <p className="w-[1000px] text-xl italic leading-8">
+          <p className="text-xl italic leading-8 lg:w-[1000px]">
             Dflower8 ở đây: “D là viết tắt cho tên của cô Lê Vũ Điệp, 8 là Nhóm
             8 còn flower là hoa, là cầu nối giữa cô Lê Vũ Điệp và Nhóm 8”.
             <br />
@@ -94,11 +97,11 @@ function AboutUs() {
         </div>
 
         <div className="flex flex-col items-center justify-center">
-          <h2 className="mb-8 mt-12 font-tanMonCheri text-[40px] tracking-widest">
+          <h2 className="mb-8 mt-12 px-4 font-tanMonCheri text-[24px] tracking-widest lg:text-[40px]">
             TẦM NHÌN - SỨ MỆNH - MỤC TIÊU
           </h2>
 
-          <div className="flex gap-8">
+          <div className="flex flex-col gap-8 xl:flex-row">
             <AboutUsCard image={Card1} title="SỨ MỆNH">
               Đ-Flower8 mang đến sức sống và niềm vui cho mỗi người thông qua vẻ
               đẹp và ý nghĩa của hoa, tạo ra không gian sống và làm việc tích
@@ -118,9 +121,9 @@ function AboutUs() {
         </div>
       </section>
 
-      <img src={Divider} className="h-[250px] w-screen object-cover" />
+      {/* <img src={Divider} className="h-[250px] w-screen object-cover" /> */}
 
-      <div className="container mx-auto my-12">
+      {/* <div className="container mx-auto my-12">
         <h3 className="mb-8 font-tanMonCheri text-[40px]">Thành viên nhóm</h3>
 
         <div className="flex gap-6">
@@ -140,7 +143,7 @@ function AboutUs() {
             Nguyễn <br /> Đức Hùng
           </MemberCard>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
