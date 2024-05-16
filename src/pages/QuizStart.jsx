@@ -17,27 +17,30 @@ function QuizStart() {
       className="relative flex items-center justify-center"
       style={{ height: window.innerHeight - 54 }}
     >
-      <div className="z-10 flex cursor-none flex-col items-center justify-center text-[32px]">
-        <h1 className="font-semibold">TÌM HIỂU</h1>
+      <div className="z-10 flex scale-100 cursor-none flex-col items-center justify-center text-[32px] lg:scale-125">
+        <h1 className="font-tanMonCheri font-semibold">Tìm hiểu</h1>
         <span className="flex items-end gap-2 font-semibold">
-          <h1 className="text-[#546641] underline underline-offset-4">
-            LOẠI HOA
+          <h1 className="font-vivaldi text-[70px] text-[#546641] ">loại hoa</h1>
+          <h3 className="text-[28px]">của</h3>
+          <h1 className="font-vivaldi text-[60px] leading-none text-[#FF4611]">
+            bạn
           </h1>
-          <h3 className="text-[28px]">CỦA</h3>
-          <h1 className="text-[#FF4611]">BẠN</h1>
         </span>
 
         <Link
           to="/quiz"
-          className="btn btn-lg mt-10 w-[200px] bg-[#546641] font-medium  text-white hover:bg-[#546641d3]"
+          className="btn mt-10 w-[200px] bg-[#546641] font-medium text-white  sm:btn-lg hover:bg-[#546641d3]"
         >
           BẮT ĐẦU
         </Link>
       </div>
 
       <div>
-        <img className="absolute bottom-0 left-0" src={Image1} />
-        <img className="absolute right-0 top-4" src={Image2} />
+        <img
+          className="absolute bottom-0 left-0 scale-75 sm:-left-10 sm:bottom-0  sm:scale-100 "
+          src={Image1}
+        />
+        <img className="absolute right-0 top-4 hidden sm:block" src={Image2} />
         <img className="absolute right-[120px] top-[450px]" src={Image7} />
         <img className="absolute bottom-0 right-0" src={Image6} />
         <img

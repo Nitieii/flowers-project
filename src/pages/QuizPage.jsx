@@ -65,7 +65,7 @@ const QuizzPage = () => {
         >
           {questions.question}
         </h2>
-        <div className="flex flex-col items-center justify-center ">
+        <div className="flex flex-col items-center justify-center">
           {questions.options.map((item) => (
             <QuizzAnswer
               key={item.id}
@@ -77,9 +77,9 @@ const QuizzPage = () => {
         </div>
       </div>
       <div className="fixed bottom-0 right-0  flex w-screen bg-white max-sm:mt-[120px]">
-        <div className="max-container flex flex-row items-center  justify-center py-[20px] ">
+        <div className="max-container flex flex-row items-center justify-center py-[20px] gap-6 sm:gap-20">
           <div
-            className={`mr-[14px] h-[16px] w-[200px] rounded-full bg-[#EDE8E3] max-sm:w-[100px]`}
+            className={`h-[16px] w-[200px] rounded-full bg-[#EDE8E3] max-sm:w-[100px]`}
           >
             <div
               className={`h-[16px]  rounded-full transition-colors duration-700 ${
@@ -88,12 +88,12 @@ const QuizzPage = () => {
               style={{ width: `${progress}%` }}
             ></div>
           </div>
-          <p className="mr-[209px] font-[900] text-[#757575] max-sm:mr-[90px]">
+          <p className=" font-[900] text-[#757575]">
             {index + 1}/{question.length}
           </p>
 
           <button
-            className={`text-nowrap rounded-md bg-[#71845C] px-[77px] py-[20px] text-base font-bold uppercase text-white transition-colors duration-700 max-sm:px-[40px] max-sm:py-[15px] ${
+            className={`text-nowrap rounded-md bg-[#71845C] px-[30px] sm:px-[50px] py-[20px] text-base font-semibold text-white transition-colors duration-700 max-sm:py-[15px] ${
               !isSelected ? "cursor-not-allowed bg-[#747475]" : "cursor-pointer"
             }`}
             onClick={handleNextClick}

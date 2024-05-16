@@ -37,7 +37,7 @@ function Footer() {
 
   return (
     <footer className="relative bg-white text-gray-800">
-      <div className="mx-auto mt-4 flex max-w-6xl flex-col flex-wrap justify-between gap-4 px-4 pt-2 sm:flex-row">
+      <div className="mx-auto mt-4 flex max-w-6xl flex-row flex-wrap justify-between gap-4 px-4 pt-2 ">
         <div className="mb-0 sm:mb-4">
           <img src={LogoLight} alt="Logo" className="h-8" />
 
@@ -54,7 +54,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="-mt-6 flex flex-col flex-wrap gap-4 text-sm font-semibold sm:mt-0">
+        <div className="flex flex-col flex-wrap gap-4 text-sm font-semibold">
           <NavLink
             to="/"
             className="mx-2 text-nowrap duration-300 hover:text-secondary"
@@ -86,7 +86,7 @@ function Footer() {
           </NavLink>
         </div>
 
-        <div className="xs:mt-3 mb-5 flex w-[350px] flex-col gap-2 text-xs">
+        <div className="xs:mt-3 items-cnter mb-5 flex w-[350px] flex-col gap-2 text-xs">
           <p className="font-float text-[16px]">Hãy để lại lời nhắn của bạn:</p>
           <form onSubmit={handleSubmit} className="flex flex-col gap-2">
             <input

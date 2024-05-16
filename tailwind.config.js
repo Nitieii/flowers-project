@@ -50,7 +50,12 @@ export default {
         quizz: "url('assets/Quizzes.png')",
       },
       screens: {
-        wide: "1440px",
+        xs: "480px", // Custom breakpoint
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
       },
     },
   },

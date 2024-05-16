@@ -137,7 +137,7 @@ const LandingPage = () => {
               clickable: true,
             }}
             modules={[EffectCoverflow, Pagination, Navigation, EffectFade]}
-            className="swiper_container h-[660px] w-[320px] sm:w-[600px] md:h-[720px] md:w-[720px] lg:h-[730px] lg:w-[1000px] xl:w-[1200px]"
+            className="swiper_container h-[660px] w-[320px] sm:w-[600px] sm:h-[620px] md:h-[720px] md:w-[720px] lg:h-[730px] lg:w-[1000px] xl:w-[1200px]"
           >
             {stories.map((story) => (
               <SwiperSlide key={story.id}>

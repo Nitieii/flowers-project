@@ -66,7 +66,9 @@ function Header() {
             onClick={() => setOpenSidebar(!openSidebar)}
           >
             <RxHamburgerMenu
-              color={!isTopPage ? "#000" : "white"}
+              color={
+                !isTopPage || currentPath === "/quizStart" ? "#000" : "white"
+              }
               className="h-9 w-9"
             />
           </button>

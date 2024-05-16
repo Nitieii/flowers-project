@@ -1,6 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { VscUnmute, VscMute } from "react-icons/vsc";
+import { HiOutlineHome } from "react-icons/hi2";
+import { GoArrowLeft } from "react-icons/go";
 
 import StoryBgVideo1 from "../assets/StoryPageBackgrounds/bgVideo1.mp4";
 import StoryBgVideo2 from "../assets/StoryPageBackgrounds/bgVideo2.mp4";
@@ -12,6 +14,7 @@ import StoryBgImg3 from "../assets/StoryPageBackgrounds/bgImage3.jpg";
 import ScrollNextIcon from "../assets/StoryPageIcons/chevron-down.svg";
 
 import storiesData from "../data/stories.json";
+import useWindowWidth from "../context/useWindowWidth";
 
 function Story() {
   const { id } = useParams();
@@ -33,6 +36,8 @@ function Story() {
   const story = stories.find((story) => story.id === parseInt(id));
 
   const navigate = useNavigate();
+
+  const windowWidth = useWindowWidth();
 
   // Highlight the chapter on view
   useEffect(() => {
@@ -104,9 +109,9 @@ function Story() {
         >
           <div className="absolute top-0 h-full w-full bg-black bg-opacity-20">
             <div className="absolute bottom-0 left-[2%] w-auto min-w-[360px] max-w-[546px] text-white md:w-[546px] lg:left-[10%]">
-              <div className="h-[560px] md:h-[500px]">
+              <div className="h-[560px] px-2 md:h-[500px]">
                 {index === 0 && id === String(1) && (
-                  <div className="-ml-10 mb-2 flex w-auto scale-[75%] items-end gap-2">
+                  <div className="-ml-10 mb-2 flex w-[330px] scale-[75%] items-end gap-2 md:w-auto">
                     <h1 className="font-tanWaltzingMathilde text-[40px] leading-tight">
                       <span className="text-nowrap font-tanWaltzingMathilde">
                         Có 1
@@ -179,7 +184,9 @@ function Story() {
                   Chapter {index + 1}: {story.chapterTitle[index]}
                 </h3>
 
-                <p className="text-md w-auto italic lg:w-[500px]">{chapter}</p>
+                <p className="text-md text-wrap italic lg:w-[500px]">
+                  {chapter}
+                </p>
               </div>
 
               {currentChapter + 1 !== story.content.length && (
@@ -204,32 +211,68 @@ function Story() {
         </button>
       </div>
 
-      <div className="absolute bottom-20 left-[10%]">
+      {windowWidth < 640 && (
+        <>
+          <div className="absolute left-0 top-10 z-10 sm:right-36">
+            <button
+              className="btn relative rounded-none border-none bg-black bg-opacity-40 text-xl text-white hover:bg-black hover:bg-opacity-60"
+              onClick={() => setIsMute(!isMute)}
+            >
+              <HiOutlineHome />
+            </button>
+          </div>
+          <div className="absolute left-0 top-24 z-10 sm:right-36">
+            <button
+              className="btn relative rounded-none border-none bg-black bg-opacity-40 text-xl text-white hover:bg-black hover:bg-opacity-60"
+              onClick={() => navigate("/story/1")}
+            >
+              <GoArrowLeft />
+            </button>
+          </div>
+          <div className="absolute right-0 top-24 z-10 sm:right-36">
+            <button
+              className="btn relative rounded-none border-none bg-black bg-opacity-40 text-xl text-white hover:bg-black hover:bg-opacity-60"
+              onClick={() => navigate("/story/3")}
+            >
+              <GoArrowLeft className="rotate-180" />
+            </button>
+          </div>
+        </>
+      )}
+
+      <div className="absolute bottom-40 left-[10%]">
         <button
-          className={`btn w-36 ${id === String(2) && currentChapter === 1 ? "opacity-100" : "opacity-0"}`}
+          className={`btn w-36 text-nowrap ${id === String(2) && currentChapter === 1 ? "opacity-100" : "opacity-0"}`}
           onClick={() => navigate("/quizStart")}
           disabled={!(id === String(2) && currentChapter === 1)}
         >
-          Quiz
+          Khám phá (Quiz)
         </button>
       </div>
 
-      <div className="absolute right-0 top-0 hidden h-screen w-24 flex-col justify-center bg-black bg-opacity-20 text-white duration-300 sm:flex">
+      <div className="absolute right-0 top-0 hidden h-screen w-[100px] flex-col justify-center bg-black bg-opacity-20 text-white duration-300 sm:flex ">
+        <button
+          className="fixed top-0 bg-black bg-opacity-30 p-2 text-start text-sm duration-300 hover:bg-opacity-70"
+          onClick={() => navigate("/")}
+        >
+          Quay về trang chủ
+        </button>
+
+        <button
+          className="relative rounded-none border-none bg-black bg-opacity-40 p-2 text-left text-sm  text-white hover:bg-black hover:bg-opacity-60"
+          onClick={() => navigate("/story/1")}
+        >
+          Câu chuyện trước
+        </button>
+
         {story.content.map((_, index) => (
           <div key={index} className="relative flex">
-            <button
-              className="fixed top-0 bg-black bg-opacity-30 p-2 text-start text-sm duration-300 hover:bg-opacity-70"
-              onClick={() => navigate("/")}
-            >
-              Quay về trang chủ
-            </button>
-
             <div
-              className={`${currentChapter === index ? "" : "bg-opacity-0"} h-full w-1 bg-yellow-500 duration-300`}
+              className={`${currentChapter === index ? "" : "bg-opacity-0"}  h-full w-1 bg-yellow-500 duration-300`}
             ></div>
             <a
               href={`chapter-${index}`}
-              className={`${currentChapter === index ? "font-semibold" : ""} w-full bg-black bg-opacity-0 p-2 text-sm hover:bg-opacity-40`}
+              className={`${currentChapter === index ? "font-semibold" : ""} ${index === 0 ? "border-t" : ""} ${index === story.content.length - 1 ? "border-b" : ""} w-full bg-black bg-opacity-0 p-2 text-sm hover:bg-opacity-40`}
               onClick={(e) => {
                 e.preventDefault();
                 const target = e.target;
@@ -246,6 +289,12 @@ function Story() {
             </a>
           </div>
         ))}
+        <button
+          className="relative rounded-none border-none bg-black bg-opacity-40 p-2 text-left text-sm  text-white hover:bg-black hover:bg-opacity-60"
+          onClick={() => navigate("/story/3")}
+        >
+          Câu chuyện tiếp theo
+        </button>
       </div>
     </div>
   );
