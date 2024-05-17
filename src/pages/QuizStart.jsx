@@ -10,8 +10,13 @@ import Image9 from "../assets/QuizStartPageImgs/Backgroudimg9.png";
 import Image10 from "../assets/QuizStartPageImgs/Backgroudimg10.png";
 import Image11 from "../assets/QuizStartPageImgs/Backgroudimg11.png";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 function QuizStart() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div
       className="relative flex items-center justify-center"
