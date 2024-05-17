@@ -88,7 +88,7 @@ const LandingPage = () => {
 
         <div className="absolute top-0 z-10 h-full w-full bg-black bg-opacity-20 text-white opacity-100 duration-300 hover:bg-opacity-20 hover:opacity-100 md:bg-opacity-0 md:opacity-0">
           <div className="absolute bottom-[14%] left-[5%] w-auto md:left-[10%] md:w-[546px] lg:left-[16%]">
-            <div className="relative ms-8 h-[168px] w-[300px]">
+            <div className="relative ms-8 h-[180px] w-[300px]">
               <h1 className="absolute top-0 font-tanMonCheri text-[40px]">
                 Nghĩ khác
               </h1>

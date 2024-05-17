@@ -41,7 +41,7 @@ function Footer() {
         <div className="mb-0 sm:mb-4">
           <img src={LogoLight} alt="Logo" className="h-8" />
 
-          <div className="relative ms-1 mt-3 h-[84px] w-[150px]">
+          <div className="relative ms-1 mt-3 h-[90px] w-[150px]">
             <h1 className="absolute top-0 font-tanMonCheri text-[20px]">
               Nghĩ khác
             </h1>

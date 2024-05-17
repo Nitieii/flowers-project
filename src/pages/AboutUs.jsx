@@ -36,14 +36,14 @@ function AboutUs() {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="absolute left-0 top-0 h-[500px] w-screen bg-cover bg-center py-10"
+        className="absolute left-0 top-0 h-[500px] w-full bg-cover bg-center py-10 "
       ></section>
       <div style={isTopPage ? { height: 500 - 55 } : { height: 525 }}></div>
 
       <section className="container mx-auto my-8">
         <div className="flex flex-col-reverse items-center justify-center gap-8 px-4 lg:flex-row">
           <div className="">
-            <div className="relative h-[168px] w-[300px] sm:ms-20 sm:mt-20 sm:scale-150 ">
+            <div className="relative h-[180px] w-[300px] sm:ms-20 sm:mt-20 sm:scale-150 ">
               <h1 className="absolute top-0 font-tanMonCheri text-[40px]">
                 Nghĩ khác
               </h1>
@@ -70,7 +70,7 @@ function AboutUs() {
           <div className="">
             <img
               src={Image1}
-              className="xs:w-[480px] w-full text-center xl:w-[580px]"
+              className="w-full text-center xs:w-[480px] xl:w-[580px]"
             />
           </div>
         </div>
@@ -84,7 +84,7 @@ function AboutUs() {
             GIẢI THÍCH Ý NGHĨA THƯƠNG HIỆU
           </h2>
 
-          <p className="text-xl italic leading-8 lg:w-[1000px]">
+          <p className="text-xl italic leading-8 lg:w-[980px]">
             Dflower8 ở đây: “D là viết tắt cho tên của cô Lê Vũ Điệp, 8 là Nhóm
             8 còn flower là hoa, là cầu nối giữa cô Lê Vũ Điệp và Nhóm 8”.
             <br />
@@ -101,7 +101,7 @@ function AboutUs() {
             TẦM NHÌN - SỨ MỆNH - MỤC TIÊU
           </h2>
 
-          <div className="flex flex-col gap-8 xl:flex-row">
+          <div className="flex flex-col flex-wrap gap-8 md:flex-row lg:w-[980px] xl:w-auto">
             <AboutUsCard image={Card1} title="SỨ MỆNH">
               Đ-Flower8 mang đến sức sống và niềm vui cho mỗi người thông qua vẻ
               đẹp và ý nghĩa của hoa, tạo ra không gian sống và làm việc tích
@@ -121,12 +121,14 @@ function AboutUs() {
         </div>
       </section>
 
-      {/* <img src={Divider} className="h-[250px] w-screen object-cover" /> */}
+      <img src={Divider} className="h-[250px] w-screen object-cover" />
 
-      {/* <div className="container mx-auto my-12">
-        <h3 className="mb-8 font-tanMonCheri text-[40px]">Thành viên nhóm</h3>
+      <div className="container mx-auto my-12">
+        <h3 className="mb-8 mt-12 px-4 font-tanMonCheri text-[24px] tracking-widest lg:text-[40px]">
+          Thành viên nhóm
+        </h3>
 
-        <div className="flex gap-6">
+        <div className="flex flex-wrap gap-6">
           <MemberCard image={BgImage1} id="TTQT49B11769">
             Đào Trọng <br /> Quang Minh
           </MemberCard>
@@ -143,7 +145,7 @@ function AboutUs() {
             Nguyễn <br /> Đức Hùng
           </MemberCard>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

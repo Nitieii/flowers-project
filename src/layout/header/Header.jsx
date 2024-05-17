@@ -53,7 +53,7 @@ function Header() {
 
   return (
     <header
-      className={`z-20 mx-auto w-full justify-center duration-300
+      className={`z-20 w-full justify-center duration-300 overflow-hidden
       ${currentPath === "/" ? "fixed" : ""}
       ${!isTopPage ? "fixed bg-white shadow-xl" : "bg-transparent"}`}
     >
