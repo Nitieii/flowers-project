@@ -74,6 +74,8 @@ function Story() {
     window.scrollTo(0, 0);
   }, []);
 
+  const contents = story.content.map((t) => t.split("\n"));
+
   if (!story) {
     return <div>Story not found</div>;
   }
@@ -104,16 +106,16 @@ function Story() {
           );
       })}
 
-      {story.content.map((chapter, index) => (
+      {contents.map((chapter, index) => (
         <div
-          className="relative h-screen w-screen snap-start bg-transparent"
+          className="relative h-screen w-screen snap-start bg-transparent "
           key={index}
           id={`chapter-${index}`}
           ref={(el) => (chaptersRef.current[index] = el)}
         >
           <div className="absolute top-0 h-full w-full bg-black bg-opacity-20">
-            <div className="absolute bottom-0 left-[2%] w-auto min-w-[360px] max-w-[546px] text-white md:w-[546px] lg:left-[10%]">
-              <div className="h-[560px] px-2 md:h-[500px]">
+            <div className="absolute bottom-[0px] left-[2%] w-auto min-w-[360px] max-w-[546px] text-white md:w-[546px] lg:left-[10%] ">
+              <div className="scrollbar-hide-y max-h-[720px] md:max-h-[860px] overflow-y-scroll px-2">
                 {index === 0 && id === String(1) && (
                   <div className="-ml-10 mb-2 flex w-[330px] scale-[75%] items-end gap-2 md:w-auto">
                     <h1 className="font-tanWaltzingMathilde text-[40px] leading-tight">
@@ -184,13 +186,21 @@ function Story() {
                   </div>
                 )}
 
-                <h3 className="font-float text-3xl leading-tight">
+                <h3 className="font-float text-3xl leading-tight mb-3">
                   Chapter {index + 1}: {story.chapterTitle[index]}
                 </h3>
 
-                <p className="text-md text-wrap italic lg:w-[500px]">
-                  {chapter}
-                </p>
+                {chapter.map((c, index) => (
+                  <>
+                    <p
+                      key={index}
+                      className="text-md text-wrap italic lg:w-[500px] "
+                    >
+                      {c}
+                    </p>
+                    <br/>
+                  </>
+                ))}
               </div>
 
               {currentChapter + 1 !== story.content.length && (
