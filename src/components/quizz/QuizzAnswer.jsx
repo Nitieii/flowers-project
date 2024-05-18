@@ -1,10 +1,9 @@
 import PropTypes from "prop-types";
 
 const QuizzAnswer = ({ option, selected, onClick }) => {
-  console.log(selected);
   return (
     <div
-      className={`opacity-1 mx-4 mb-[30px] flex min-w-[340px] cursor-pointer flex-row items-center gap-[30px] rounded-lg px-[24px] py-[16px] transition-colors duration-700 sm:w-[500px] ${
+      className={`opacity-1 mx-4 mb-[30px] flex w-[500px] cursor-pointer flex-row items-center gap-[30px] rounded-lg px-[24px] py-[16px] transition-colors duration-700 max-sm:w-[390px] ${
         selected ? "bg-primary" : "bg-white"
       }`}
       onClick={onClick}
