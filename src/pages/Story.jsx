@@ -298,7 +298,7 @@ function Story() {
         </>
       )}
 
-      <div className="absolute bottom-32 left-[10%]">
+      <div className="absolute bottom-20 left-[10%]">
         <button
           className={`btn w-36 text-nowrap ${id === String(2) && currentChapter === contents.length - 1 ? "opacity-100" : "opacity-0"}`}
           onClick={() => navigate("/quizStart")}
