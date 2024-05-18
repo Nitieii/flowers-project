@@ -4,9 +4,12 @@ import { VscUnmute, VscMute } from "react-icons/vsc";
 import { HiOutlineHome } from "react-icons/hi2";
 import { GoArrowLeft } from "react-icons/go";
 
-import StoryBgVideo1 from "../assets/StoryPageBackgrounds/bgVideo1.mp4";
-import StoryBgVideo2 from "../assets/StoryPageBackgrounds/bgVideo2.mp4";
-import StoryBgVideo3 from "../assets/StoryPageBackgrounds/bgVideo3.mp4";
+import StoryBgVideo1_1 from "../assets/StoryPageBackgrounds/bgVideo1_1.mp4";
+import StoryBgVideo2_1 from "../assets/StoryPageBackgrounds/bgVideo2_1.mp4";
+import StoryBgVideo3_1 from "../assets/StoryPageBackgrounds/bgVideo3_1.mp4";
+import StoryBgVideo1_2 from "../assets/StoryPageBackgrounds/bgVideo1_2.mp4";
+import StoryBgVideo2_2 from "../assets/StoryPageBackgrounds/bgVideo2_2.mp4";
+import StoryBgVideo3_2 from "../assets/StoryPageBackgrounds/bgVideo3_2.mp4";
 import StoryBgImg1 from "../assets/StoryPageBackgrounds/bgImage1.jpg";
 import StoryBgImg2 from "../assets/StoryPageBackgrounds/bgImage2.jpg";
 import StoryBgImg3 from "../assets/StoryPageBackgrounds/bgImage3.jpg";
@@ -24,9 +27,9 @@ function Story() {
   const chaptersRef = useRef([]);
 
   const storyBackground = [
-    [StoryBgImg1, StoryBgVideo1],
-    [StoryBgImg2, StoryBgVideo2],
-    [StoryBgImg3, StoryBgVideo3],
+    [StoryBgImg1, StoryBgVideo1_1, StoryBgVideo1_2],
+    [StoryBgImg2, StoryBgVideo2_1, StoryBgVideo2_2],
+    [StoryBgImg3, StoryBgVideo3_1, StoryBgVideo3_2],
   ];
 
   const stories = storiesData.map((_, index) => ({
@@ -115,7 +118,7 @@ function Story() {
         >
           <div className="absolute top-0 h-full w-full bg-black bg-opacity-20">
             <div className="absolute bottom-[0px] left-[2%] w-auto min-w-[360px] max-w-[546px] text-white md:w-[546px] lg:left-[10%] ">
-              <div className="scrollbar-hide-y max-h-[720px] md:max-h-[860px] overflow-y-scroll px-2">
+              <div className="scrollbar-hide-y max-h-[720px] overflow-y-scroll px-2 md:max-h-[860px]">
                 {index === 0 && id === String(1) && (
                   <div className="-ml-10 mb-2 flex w-[330px] scale-[75%] items-end gap-2 md:w-auto">
                     <h1 className="font-tanWaltzingMathilde text-[40px] leading-tight">
@@ -186,7 +189,7 @@ function Story() {
                   </div>
                 )}
 
-                <h3 className="font-float text-3xl leading-tight mb-3">
+                <h3 className="mb-3 font-float text-3xl leading-tight">
                   Chapter {index + 1}: {story.chapterTitle[index]}
                 </h3>
 
@@ -198,7 +201,7 @@ function Story() {
                     >
                       {c}
                     </p>
-                    <br/>
+                    <br />
                   </>
                 ))}
               </div>
