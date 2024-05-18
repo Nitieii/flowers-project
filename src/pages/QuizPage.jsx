@@ -11,6 +11,7 @@ import {
 import QuizzAnswer from "../components/quizz/QuizzAnswer";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { IoRefreshOutline, IoHomeOutline } from "react-icons/io5";
 
 const QuizzPage = () => {
   const [index, setIndex] = useState(0);
@@ -24,13 +25,13 @@ const QuizzPage = () => {
 
   const navigate = useNavigate();
 
-    const images = {
-      "Hoa hồng": rose,
-      "Hoa tulip": tulip,
-      "Hoa đồng tiền": money,
-      "Hoa violet": violet,
-      "Hoa cẩm chướng": karma,
-    };
+  const images = {
+    "Hoa hồng": rose,
+    "Hoa tulip": tulip,
+    "Hoa đồng tiền": money,
+    "Hoa violet": violet,
+    "Hoa cẩm chướng": karma,
+  };
 
   const handleAnswerClick = (optionId) => {
     setSelectedAnswer(optionId);
@@ -78,7 +79,8 @@ const QuizzPage = () => {
     setSelectedAnswers([]);
     setResult(null);
     setIsResultMode(false);
-  }
+    setSelectedAnswer(null);
+  };
 
   const progress = ((index + 1) / question.length) * 100;
 
@@ -87,7 +89,7 @@ const QuizzPage = () => {
       <div className="max-container">
         <div className="flex flex-row items-center justify-between px-[40px] pb-[90px] pt-[40px] max-sm:pb-[60px]">
           <h3 className="mx-auto font-montserrat text-2xl font-semibold">
-            Flowers Quiz {!isResultMode ? `#${index + 1}` : ""}
+            {!isResultMode ? `Flowers Quiz #${index + 1}` : "Kết quả"}
           </h3>
           <img
             className="cursor-pointer"
@@ -110,14 +112,15 @@ const QuizzPage = () => {
 
         <div className="flex flex-col items-center ">
           {isResultMode ? (
-            <div className="flex flex-col items-center justify-center">
-              <img
-                className="mb-[40px]"
-                src={images[result]}
-                alt="result"
-                width={700}
-                height={700}
-              />
+            <div className="flex flex-col items-center justify-center ">
+              <button
+                className="text-nowrap rounded-md bg-[#71845C] px-[30px] py-[20px] text-base font-semibold text-white transition-colors duration-700 max-sm:py-[15px] sm:px-[50px]"
+                onClick={() =>
+                  document.getElementById("quiz-result").showModal()
+                }
+              >
+                Xem kết quả
+              </button>
             </div>
           ) : (
             questions.options.map((item) => (
@@ -151,7 +154,6 @@ const QuizzPage = () => {
               {index + 1}/{question.length}
             </p>
           )}
-      
 
           <button
             className={`text-nowrap rounded-md bg-[#71845C] px-[30px] py-[20px] text-base font-semibold text-white transition-colors duration-700 max-sm:py-[15px] sm:px-[50px] ${
@@ -164,6 +166,36 @@ const QuizzPage = () => {
           </button>
         </div>
       </div>
+
+      <dialog id="quiz-result" className="modal">
+        <div className="modal-box flex max-w-[800px] flex-col items-center">
+          <h3 className="mb-8 text-center text-3xl font-bold">
+            Loại hoa của bạn là:
+          </h3>
+          <img
+            className="mb-[20px]"
+            src={images[result]}
+            alt="result"
+            width={700}
+            height={700}
+          />
+
+          <div className="flex w-full flex-col gap-x-8 gap-y-3 sm:w-auto sm:flex-row">
+            <button
+              className="sm:min-h-auto btn h-8 min-h-8 w-full bg-[#71845C] text-white hover:bg-[#71845cd2] sm:h-12 sm:w-48"
+              onClick={() => navigate("/")}
+            >
+              <IoHomeOutline /> Về trang chủ
+            </button>
+            <button
+              className="sm:min-h-auto btn h-8 min-h-8 w-full bg-[#71845C] text-white hover:bg-[#71845cd2] sm:h-12 sm:w-48"
+              onClick={handleReset}
+            >
+              <IoRefreshOutline /> Làm lại
+            </button>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 };

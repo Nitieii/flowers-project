@@ -1,5 +1,3 @@
-import React from "react";
-
 const QuizzBanner = () => {
   return (
     <div className="bg-quizz bg-cover bg-center xl:min-h-screen">
