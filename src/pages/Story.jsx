@@ -118,7 +118,7 @@ function Story() {
         >
           <div className="absolute top-0 h-full w-full bg-black bg-opacity-20">
             <div className="absolute bottom-[0px] left-[2%] w-auto min-w-[360px] max-w-[546px] text-white md:w-[546px] lg:left-[10%] ">
-              <div className="scrollbar-hide-y max-h-[720px] overflow-y-scroll px-2 md:max-h-[860px]">
+              <div className="scrollbar-hide-y max-h-[700px] overflow-y-scroll px-2 md:max-h-[860px]">
                 {index === 0 && id === String(1) && (
                   <div className="-ml-10 mb-2 flex w-[330px] scale-[75%] items-end gap-2 md:w-auto">
                     <h1 className="font-tanWaltzingMathilde text-[40px] leading-tight">
