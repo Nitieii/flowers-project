@@ -115,7 +115,7 @@ const QuizzPage = () => {
                 className="mb-[40px]"
                 src={images[result]}
                 alt="result"
-                width={850}
+                width={700}
                 height={700}
               />
             </div>
