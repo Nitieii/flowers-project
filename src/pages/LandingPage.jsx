@@ -137,7 +137,7 @@ const LandingPage = () => {
               clickable: true,
             }}
             modules={[EffectCoverflow, Pagination, Navigation, EffectFade]}
-            className="swiper_container h-[660px] w-[320px] sm:w-[600px] sm:h-[620px] md:h-[720px] md:w-[720px] lg:h-[730px] lg:w-[1000px] xl:w-[1200px]"
+            className="swiper_container h-[840px] w-[320px] sm:h-[740px] sm:w-[600px] md:h-[800px] md:w-[720px] lg:h-[800px] lg:w-[1000px] xl:w-[1200px]"
           >
             {stories.map((story) => (
               <SwiperSlide key={story.id}>
@@ -153,11 +153,7 @@ const LandingPage = () => {
                   </h3>
 
                   <p className="w-[320px] font-medium opacity-0 sm:w-[580px] md:w-[680px] lg:w-[800px] xl:w-[1000px]">
-                    rure eiusmod sit cillum laborum occaecat ex fugiat elit non
-                    fugiat i irure eu veniam id qui. Velit amet ut ipsum irure
-                    incididunt. Velit Lorem do irure ut eu voluptate irure Lorem
-                    commodo fugiat.Velit Lorem do irure ut eu voluptate irure
-                    Lorem commodo fugiat.
+                    {story.description}
                   </p>
                   <button
                     className="btn h-[39px] min-h-[39px] w-[120px] bg-primary font-medium text-white opacity-0 hover:bg-[#546641c9]"

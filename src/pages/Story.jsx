@@ -27,9 +27,39 @@ function Story() {
   const chaptersRef = useRef([]);
 
   const storyBackground = [
-    [StoryBgImg1, StoryBgVideo1_1, StoryBgVideo1_2],
-    [StoryBgImg2, StoryBgVideo2_1, StoryBgVideo2_2],
-    [StoryBgImg3, StoryBgVideo3_1, StoryBgVideo3_2],
+    [
+      StoryBgImg1,
+      StoryBgVideo1_1,
+      StoryBgVideo1_2,
+      StoryBgImg1,
+      StoryBgVideo1_1,
+      StoryBgVideo1_2,
+      StoryBgImg1,
+      StoryBgVideo1_1,
+      StoryBgVideo1_2,
+    ],
+    [
+      StoryBgImg2,
+      StoryBgVideo2_1,
+      StoryBgVideo2_2,
+      StoryBgImg2,
+      StoryBgVideo2_1,
+      StoryBgVideo2_2,
+      StoryBgImg2,
+      StoryBgVideo2_1,
+      StoryBgVideo2_2,
+    ],
+    [
+      StoryBgImg3,
+      StoryBgVideo3_1,
+      StoryBgVideo3_2,
+      StoryBgImg3,
+      StoryBgVideo3_1,
+      StoryBgVideo3_2,
+      StoryBgImg3,
+      StoryBgVideo3_1,
+      StoryBgVideo3_2,
+    ],
   ];
 
   const stories = storiesData.map((_, index) => ({
@@ -77,7 +107,18 @@ function Story() {
     window.scrollTo(0, 0);
   }, []);
 
+  function handleNavigation(page) {
+    const element = document.getElementById("chapter-0");
+
+    element?.scrollIntoView({
+      behavior: "auto",
+    });
+    navigate(`/story/${page}`);
+  }
+
   const contents = story.content.map((t) => t.split("\n"));
+
+  console.log(contents.length);
 
   if (!story) {
     return <div>Story not found</div>;
@@ -118,7 +159,7 @@ function Story() {
         >
           <div className="absolute top-0 h-full w-full bg-black bg-opacity-20">
             <div className="absolute bottom-[0px] left-[2%] w-auto min-w-[360px] max-w-[546px] text-white md:w-[546px] lg:left-[10%] ">
-              <div className="scrollbar-hide-y max-h-[700px] overflow-y-scroll px-2 md:max-h-[860px]">
+              <div className="h-[560px] px-2 md:h-[500px]">
                 {index === 0 && id === String(1) && (
                   <div className="-ml-10 mb-2 flex w-[330px] scale-[75%] items-end gap-2 md:w-auto">
                     <h1 className="font-tanWaltzingMathilde text-[40px] leading-tight">
@@ -190,7 +231,7 @@ function Story() {
                 )}
 
                 <h3 className="mb-3 font-float text-3xl leading-tight">
-                  Chapter {index + 1}: {story.chapterTitle[index]}
+                  {story.chapterTitle[index]}
                 </h3>
 
                 {chapter.map((c, index) => (
@@ -241,7 +282,7 @@ function Story() {
           <div className="absolute left-0 top-24 z-10 sm:right-36">
             <button
               className={`btn relative rounded-none border-none bg-black bg-opacity-40 text-xl text-white hover:bg-black hover:bg-opacity-60 ${id > 1 ? "block" : "hidden"}`}
-              onClick={() => navigate(`/story/${parseInt(id) - 1}`)}
+              onClick={() => handleNavigation(parseInt(id) - 1)}
             >
               <GoArrowLeft />
             </button>
@@ -249,7 +290,7 @@ function Story() {
           <div className="absolute right-0 top-24 z-10 sm:right-36">
             <button
               className={`btn relative rounded-none border-none bg-black bg-opacity-40 text-xl text-white hover:bg-black hover:bg-opacity-60 ${id < 3 ? "block" : "hidden"}`}
-              onClick={() => navigate(`/story/${parseInt(id) + 1}`)}
+              onClick={() => handleNavigation(parseInt(id) + 1)}
             >
               <GoArrowLeft className="rotate-180" />
             </button>
@@ -257,11 +298,13 @@ function Story() {
         </>
       )}
 
-      <div className="absolute bottom-40 left-[10%]">
+      <div className="absolute bottom-32 left-[10%]">
         <button
-          className={`btn w-36 text-nowrap ${id === String(2) && currentChapter === 1 ? "opacity-100" : "opacity-0"}`}
+          className={`btn w-36 text-nowrap ${id === String(2) && currentChapter === contents.length - 1 ? "opacity-100" : "opacity-0"}`}
           onClick={() => navigate("/quizStart")}
-          disabled={!(id === String(2) && currentChapter === 1)}
+          disabled={
+            !(id === String(2) && currentChapter === contents.length - 1)
+          }
         >
           Khám phá (Quiz)
         </button>
@@ -277,7 +320,7 @@ function Story() {
 
         <button
           className={`relative rounded-none border-none bg-black bg-opacity-40 p-2 text-left text-sm  text-white hover:bg-black hover:bg-opacity-60 ${id > 1 ? "block" : "hidden"}`}
-          onClick={() => navigate(`/story/${parseInt(id) - 1}`)}
+          onClick={() => handleNavigation(parseInt(id) - 1)}
         >
           Câu chuyện trước
         </button>
@@ -301,14 +344,14 @@ function Story() {
                 });
               }}
             >
-              Chapter {index + 1} <br />
-              {story.chapterTitle[index]}
+              Trang {index + 1} <br />
+              {/* {story.chapterTitle[index]} */}
             </a>
           </div>
         ))}
         <button
           className={`relative rounded-none border-none bg-black bg-opacity-40 p-2 text-left text-sm  text-white hover:bg-black hover:bg-opacity-60  ${id < 3 ? "block" : "hidden"}`}
-          onClick={() => navigate(`/story/${parseInt(id) + 1}`)}
+          onClick={() => handleNavigation(parseInt(id) + 1)}
         >
           Câu chuyện tiếp theo
         </button>
