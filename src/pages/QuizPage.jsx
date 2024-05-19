@@ -116,7 +116,7 @@ const QuizzPage = () => {
 
         <div className="flex flex-col items-center ">
           {isResultMode ? (
-            <div className="flex flex-col items-center justify-center ">
+            <div className="flex items-center justify-center ">
               <button
                 className="text-nowrap rounded-md bg-[#71845C] px-[30px] py-[20px] text-base font-semibold text-white transition-colors duration-700 max-sm:py-[15px] sm:px-[50px]"
                 onClick={() =>
@@ -125,6 +125,7 @@ const QuizzPage = () => {
               >
                 Xem kết quả
               </button>
+              <div className="h-[50px] w-[50px]"></div>
             </div>
           ) : (
             questions.options.map((item) => (
@@ -159,15 +160,19 @@ const QuizzPage = () => {
             </p>
           )}
 
-          <button
-            className={`text-nowrap rounded-md bg-[#71845C] px-[30px] py-[20px] text-base font-semibold text-white transition-colors duration-700 max-sm:py-[15px] sm:px-[50px] ${
-              !isSelected ? "cursor-not-allowed bg-[#747475]" : "cursor-pointer"
-            }`}
-            onClick={!isResultMode ? handleNextClick : handleReset}
-            disabled={!isSelected}
-          >
-            {!isResultMode ? "Tiếp theo" : "Làm lại "}
-          </button>
+          {!isResultMode && (
+            <button
+              className={`text-nowrap rounded-md bg-[#71845C] px-[30px] py-[20px] text-base font-semibold text-white transition-colors duration-700 max-sm:py-[15px] sm:px-[50px] ${
+                !isSelected
+                  ? "cursor-not-allowed bg-[#747475]"
+                  : "cursor-pointer"
+              }`}
+              onClick={!isResultMode ? handleNextClick : handleReset}
+              disabled={!isSelected}
+            >
+              {!isResultMode ? "Tiếp theo" : "Làm lại "}
+            </button>
+          )}
         </div>
       </div>
 
@@ -191,6 +196,7 @@ const QuizzPage = () => {
             >
               <IoHomeOutline /> Về trang chủ
             </button>
+
             <button
               className="sm:min-h-auto btn h-8 min-h-8 w-full bg-[#71845C] text-white hover:bg-[#71845cd2] sm:h-12 sm:w-48"
               onClick={handleReset}
