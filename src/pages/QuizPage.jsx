@@ -80,6 +80,8 @@ const QuizzPage = () => {
     setResult(null);
     setIsResultMode(false);
     setSelectedAnswer(null);
+
+    navigate('/quizStart')
   };
 
   const progress = ((index + 1) / question.length) * 100;

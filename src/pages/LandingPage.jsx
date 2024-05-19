@@ -24,7 +24,7 @@ import slide_image_3 from "../assets/SliderImgs/flower3.jpg";
 import PrevIcon from "../assets/LandingPageIcons/prevNav.svg";
 import NextIcon from "../assets/LandingPageIcons/nextNav.svg";
 
-import videoBg from "../assets/video/homepage.mp4";
+import videoBg from "../assets/video/Homepage.mov";
 import "./landing.css";
 
 import { VscUnmute, VscMute } from "react-icons/vsc";
