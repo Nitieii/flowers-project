@@ -3,11 +3,14 @@ import PropTypes from "prop-types";
 function MemberCard({ image, id, children }) {
   return (
     <div className="flex flex-1 flex-col items-center text-center">
-      <img
-        src={image}
-        alt={id}
-        className="h-[240px] max-w-[240px] object-cover o"
-      />
+      <div
+        className="h-[240px] w-[240px]"
+        style={{
+          backgroundImage: `url(${image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      ></div>
 
       <h3 className="my-4 h-16 w-full max-w-[240px] border-b border-black font-tanMonCheri text-lg font-medium leading-7">
         {children}
