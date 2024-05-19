@@ -9,6 +9,7 @@ import StoryBgVideo2_1 from "../assets/StoryPageBackgrounds/bgVideo2_1.mp4";
 import StoryBgVideo3_1 from "../assets/StoryPageBackgrounds/bgVideo3_1.mp4";
 import StoryBgVideo1_2 from "../assets/StoryPageBackgrounds/bgVideo1_2.mp4";
 import StoryBgVideo2_2 from "../assets/StoryPageBackgrounds/bgVideo2_2.mp4";
+import StoryBgVideo2_3 from "../assets/StoryPageBackgrounds/bgVideo2_3.mp4";
 import StoryBgVideo3_2 from "../assets/StoryPageBackgrounds/bgVideo3_2.mp4";
 import StoryBgImg1 from "../assets/StoryPageBackgrounds/bgImage1.jpg";
 import StoryBgImg2 from "../assets/StoryPageBackgrounds/bgImage2.jpg";
@@ -39,8 +40,8 @@ function Story() {
       StoryBgVideo1_2,
     ],
     [
-      StoryBgImg2,
-      StoryBgVideo2_1,
+      StoryBgVideo2_3,
+      StoryBgVideo2_3,
       StoryBgVideo2_2,
       StoryBgImg2,
       StoryBgVideo2_1,
