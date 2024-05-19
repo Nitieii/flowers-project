@@ -17,9 +17,9 @@ import "swiper/css/navigation";
 
 import storiesData from "../data/stories.json";
 
-import slide_image_1 from "../assets/SliderImgs/flower1.jpg";
-import slide_image_2 from "../assets/SliderImgs/flower2.jpg";
-import slide_image_3 from "../assets/SliderImgs/flower3.jpg";
+import slide_image_1 from "../assets/thumbnail/Có một loài hoa không tàn.png";
+import slide_image_2 from "../assets/thumbnail/Em có thể tự mua hoa cho chính mình.png";
+import slide_image_3 from "../assets/thumbnail/Hoa trao bất chợt, nở bừng niềm vui.png";
 
 import PrevIcon from "../assets/LandingPageIcons/prevNav.svg";
 import NextIcon from "../assets/LandingPageIcons/nextNav.svg";

@@ -9,6 +9,12 @@ import Card3 from "../assets/AboutUsPage/Card3.png";
 import Divider from "../assets/AboutUsPage/SectionDivider.png";
 import MemberCard from "../components/MemberCard";
 
+import Minh from '../assets/ẢNH CÁ NHÂN/Đào Trọng Quang Minh.png'
+import Van from '../assets/ẢNH CÁ NHÂN/Hoàng Nguyễn Ánh Vân.png'
+import Tuan from '../assets/ẢNH CÁ NHÂN/Hà Anh Tuấn.png'
+import Trang from '../assets/ẢNH CÁ NHÂN/Nguyễn Hà Thảo Trang.png'
+import Hung from '../assets/ẢNH CÁ NHÂN/Nguyễn Đức Hùng.png'
+
 function AboutUs() {
   const [isTopPage, setIsTopPage] = useState(true);
 
@@ -133,19 +139,19 @@ function AboutUs() {
         </h3>
 
         <div className="flex flex-wrap gap-6">
-          <MemberCard image={BgImage1} id="TTQT49B11769">
+          <MemberCard image={Minh} id="TTQT49B11769">
             Đào Trọng <br /> Quang Minh
           </MemberCard>
-          <MemberCard image={BgImage1} id="TTQT49B1934">
+          <MemberCard image={Van} id="TTQT49B1934">
             Hoàng Nguyễn <br /> Ánh Vân
           </MemberCard>
-          <MemberCard image={BgImage1} id="TTQT49B11769">
+          <MemberCard image={Tuan} id="TTQT49B11927">
             Hà <br /> Anh Tuấn
           </MemberCard>
-          <MemberCard image={BgImage1} id="TTQT49B11769">
+          <MemberCard image={Trang} id="TTQT49C11906">
             Nguyễn Hà <br /> Thảo Trang
           </MemberCard>
-          <MemberCard image={BgImage1} id="TTQT49B11769">
+          <MemberCard image={Hung} id="TTQT49B11654">
             Nguyễn <br /> Đức Hùng
           </MemberCard>
         </div>

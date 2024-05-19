@@ -6,7 +6,7 @@ function MemberCard({ image, id, children }) {
       <img
         src={image}
         alt={id}
-        className="h-[240px] max-w-[240px] object-cover"
+        className="h-[240px] max-w-[240px] object-cover o"
       />
 
       <h3 className="my-4 h-16 w-full max-w-[240px] border-b border-black font-tanMonCheri text-lg font-medium leading-7">

@@ -7,6 +7,7 @@ import {
   karma,
   money,
   violet,
+  sun,
 } from "../assets";
 import QuizzAnswer from "../components/quizz/QuizzAnswer";
 import { useState } from "react";
@@ -31,6 +32,7 @@ const QuizzPage = () => {
     "Hoa đồng tiền": money,
     "Hoa violet": violet,
     "Hoa cẩm chướng": karma,
+    "Hoa hướng dương": sun,
   };
 
   const handleAnswerClick = (optionId) => {
@@ -81,7 +83,7 @@ const QuizzPage = () => {
     setIsResultMode(false);
     setSelectedAnswer(null);
 
-    navigate('/quizStart')
+    navigate("/quizStart");
   };
 
   const progress = ((index + 1) / question.length) * 100;

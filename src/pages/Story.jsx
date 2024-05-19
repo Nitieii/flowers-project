@@ -11,7 +11,26 @@ import StoryBgVideo1_2 from "../assets/StoryPageBackgrounds/bgVideo1_2.mp4";
 import StoryBgVideo2_2 from "../assets/StoryPageBackgrounds/bgVideo2_2.mp4";
 import StoryBgVideo2_3 from "../assets/StoryPageBackgrounds/bgVideo2_3.mp4";
 import StoryBgVideo3_2 from "../assets/StoryPageBackgrounds/bgVideo3_2.mp4";
-import StoryBgImg1 from "../assets/StoryPageBackgrounds/bgImage1.jpg";
+import StoryBgImg1 from "../assets/StoryPageBackgrounds/story1/Trang 1.jpg";
+
+import Story1Page1 from "../assets/StoryPageBackgrounds/story1/Trang 1.jpg";
+import Story1Page2 from "../assets/StoryPageBackgrounds/story1/Trang 2.jpg";
+import Story1Page3 from "../assets/StoryPageBackgrounds/story1/Trang 3.jpg";
+import Story1Page4 from "../assets/StoryPageBackgrounds/story1/Trang 4.jpg";
+import Story1Page5 from "../assets/StoryPageBackgrounds/story1/Trang 5.jpg";
+import Story1Page6 from "../assets/StoryPageBackgrounds/story1/Trang 6.jpg";
+import Story1Page7 from "../assets/StoryPageBackgrounds/story1/Trang 7.jpg";
+
+import Story2Page1 from "../assets/StoryPageBackgrounds/story2/VIDEO STORY 02.mov";
+import Story2Page2 from "../assets/StoryPageBackgrounds/story2/Trang 2.jpg";
+import Story2Page3 from "../assets/StoryPageBackgrounds/story2/Trang 3.jpg";
+import Story2Page4 from "../assets/StoryPageBackgrounds/story2/Trang 4.jpg";
+import Story2Page5 from "../assets/StoryPageBackgrounds/story2/Trang 5.jpg";
+import Story2Page6 from "../assets/StoryPageBackgrounds/story2/Trang 6.jpg";
+import Story2Page7 from "../assets/StoryPageBackgrounds/story2/Trang 7.jpg";
+
+import Story3Page1 from "../assets/StoryPageBackgrounds/story3/VIDEO STORY 03.mov";
+
 import StoryBgImg2 from "../assets/StoryPageBackgrounds/bgImage2.jpg";
 import StoryBgImg3 from "../assets/StoryPageBackgrounds/bgImage3.jpg";
 
@@ -29,29 +48,25 @@ function Story() {
 
   const storyBackground = [
     [
-      StoryBgImg1,
-      StoryBgVideo1_1,
-      StoryBgVideo1_2,
-      StoryBgImg1,
-      StoryBgVideo1_1,
-      StoryBgVideo1_2,
-      StoryBgImg1,
-      StoryBgVideo1_1,
-      StoryBgVideo1_2,
+      Story1Page1,
+      Story1Page2,
+      Story1Page3,
+      Story1Page4,
+      Story1Page5,
+      Story1Page6,
+      Story1Page7,
     ],
     [
-      StoryBgVideo2_3,
-      StoryBgVideo2_3,
-      StoryBgVideo2_2,
-      StoryBgImg2,
-      StoryBgVideo2_1,
-      StoryBgVideo2_2,
-      StoryBgImg2,
-      StoryBgVideo2_1,
-      StoryBgVideo2_2,
+      Story2Page1,
+      Story2Page2,
+      Story2Page3,
+      Story2Page4,
+      Story2Page5,
+      Story2Page6,
+      Story2Page7,
     ],
     [
-      StoryBgImg3,
+      Story3Page1,
       StoryBgVideo3_1,
       StoryBgVideo3_2,
       StoryBgImg3,
@@ -128,7 +143,7 @@ function Story() {
     <div className="scrollbar-hide-y h-screen w-screen snap-y snap-mandatory overflow-hidden overflow-y-scroll scroll-smooth bg-transparent duration-300">
       {/* Set background of the page base on it type */}
       {story.background.map((bg, index) => {
-        if (bg.split(".")[1] === "mp4")
+        if (bg.split(".")[1] === "mp4" || bg.split(".")[1] === "mov")
           return (
             <video
               key={index}
